@@ -386,6 +386,76 @@
     }
 
     /**
+     * Video Lightbox Modal
+     */
+    function initVideoLightbox() {
+        const modal = document.getElementById('video-modal');
+        const modalBackdrop = modal?.querySelector('.video-modal-backdrop');
+        const modalContent = modal?.querySelector('.video-modal-content');
+        const modalIframe = document.getElementById('video-modal-iframe');
+        const closeBtn = document.getElementById('video-modal-close');
+        const videoTriggers = document.querySelectorAll('.video-trigger');
+
+        if (!modal || !modalIframe || videoTriggers.length === 0) return;
+
+        // Open modal on video trigger click
+        videoTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const videoId = trigger.dataset.videoId;
+                const videoTitle = trigger.dataset.videoTitle || 'Video';
+
+                if (videoId) {
+                    openVideoModal(videoId, videoTitle);
+                }
+            });
+        });
+
+        // Close modal handlers
+        closeBtn?.addEventListener('click', closeVideoModal);
+        modalBackdrop?.addEventListener('click', closeVideoModal);
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeVideoModal();
+            }
+        });
+
+        function openVideoModal(videoId, title) {
+            // Set iframe src with autoplay
+            modalIframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1`;
+            modalIframe.title = title;
+
+            // Show modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                modalBackdrop.classList.add('opacity-100');
+                modalBackdrop.classList.remove('opacity-0');
+                modalContent.classList.add('opacity-100', 'scale-100');
+                modalContent.classList.remove('opacity-0', 'scale-90');
+            });
+        }
+
+        function closeVideoModal() {
+            // Animate out
+            modalBackdrop.classList.remove('opacity-100');
+            modalBackdrop.classList.add('opacity-0');
+            modalContent.classList.remove('opacity-100', 'scale-100');
+            modalContent.classList.add('opacity-0', 'scale-90');
+
+            // Hide modal after animation
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalIframe.src = ''; // Stop video
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    }
+
+    /**
      * Gallery hover effects
      */
     function initGalleryEffects() {
@@ -436,6 +506,7 @@
         initContactForm();
         initGalleryEffects();
         initParallax();
+        initVideoLightbox();
 
         console.log('Amaya Vargas Portfolio - Premium Sports Editorial - Initialized');
     }
