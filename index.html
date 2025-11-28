@@ -62,11 +62,14 @@
     <section class="relative min-h-[85vh] lg:min-h-screen bg-navy overflow-hidden">
         <!-- Hero Background Image -->
         <div class="absolute inset-0 top-16 lg:top-20">
-            <img
-                src="assets/images/hero-action.png"
-                alt="Amaya Vargas #42"
-                class="w-full h-full object-cover object-top"
-            >
+            <picture>
+                <source media="(min-width: 1024px)" srcset="assets/images/hero-action.png">
+                <img
+                    src="assets/images/hero-action-mobile.png"
+                    alt="Amaya Vargas #42"
+                    class="w-full h-full object-cover object-top lg:object-center"
+                >
+            </picture>
             <!-- Gradient overlay - bottom only for CTA readability -->
             <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent"></div>
         </div>
