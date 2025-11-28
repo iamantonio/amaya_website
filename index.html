@@ -44,18 +44,19 @@
                 <span class="block w-7 h-0.5 bg-warm-white transition-all duration-400 ease-smooth origin-center"></span>
             </button>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 top-[80px] bg-navy z-40">
-            <div class="flex flex-col items-center justify-center h-full gap-8">
-                <a href="#about" class="mobile-nav-link">About</a>
-                <a href="#stats" class="mobile-nav-link">Stats</a>
-                <a href="#highlights" class="mobile-nav-link">Highlights</a>
-                <a href="#achievements" class="mobile-nav-link">Achievements</a>
-                <a href="#gallery" class="mobile-nav-link">Gallery</a>
-                <a href="#contact" class="btn-primary mt-6">Contact</a>
-            </div>
-        </div>
     </nav>
+
+    <!-- Mobile Menu (outside nav for proper z-index stacking) -->
+    <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 pt-20 bg-navy z-[45]">
+        <div class="flex flex-col items-center justify-center h-full gap-8">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#stats" class="mobile-nav-link">Stats</a>
+            <a href="#highlights" class="mobile-nav-link">Highlights</a>
+            <a href="#achievements" class="mobile-nav-link">Achievements</a>
+            <a href="#gallery" class="mobile-nav-link">Gallery</a>
+            <a href="#contact" class="btn-primary mt-6">Contact</a>
+        </div>
+    </div>
 
     <!-- Hero Section - Full-bleed cinematic background -->
     <section class="relative min-h-screen bg-navy overflow-hidden">
