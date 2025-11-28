@@ -1,0 +1,29 @@
+{
+  "name": "amaya-vargas-portfolio",
+  "version": "1.0.0",
+  "description": "Official portfolio website for Amaya Vargas - Youth Soccer Player",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --watch & npx live-server --port=3000",
+    "build": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "soccer",
+    "athlete",
+    "portfolio",
+    "youth-sports",
+    "recruitment"
+  ],
+  "author": "Amaya Vargas",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

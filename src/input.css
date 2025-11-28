@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base layer customizations */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-navy bg-warm-white overflow-x-hidden;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-extrabold;
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Component layer for reusable patterns */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-8 py-4
+           bg-gradient-cta text-warm-white font-display font-bold
+           text-xs uppercase tracking-widest
+           transition-all duration-400 ease-smooth
+           hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-red/30;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-8 py-4
+           bg-transparent text-warm-white font-display font-bold
+           text-xs uppercase tracking-widest
+           border-2 border-warm-white/50
+           transition-all duration-400 ease-smooth
+           hover:bg-warm-white hover:text-navy hover:-translate-y-0.5;
+  }
+
+  .section-eyebrow {
+    @apply font-display text-xs font-bold uppercase tracking-[0.2em] text-gold mb-2;
+  }
+
+  .section-title {
+    @apply text-section font-extrabold;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10
+           transition-all duration-400 ease-smooth;
+  }
+
+  .glass-card:hover {
+    @apply bg-white/10 -translate-y-1;
+  }
+
+  .nav-link {
+    @apply font-display text-xs font-semibold uppercase tracking-[0.1em]
+           text-warm-white/70 no-underline relative
+           transition-colors duration-400 ease-smooth
+           hover:text-warm-white;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-red
+           transition-all duration-400 ease-smooth;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .mobile-nav-link {
+    @apply font-display text-2xl font-bold text-warm-white no-underline
+           transition-colors duration-400 ease-smooth
+           hover:text-gold;
+  }
+}
+
+/* Utility layer for one-off utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-warm-white to-gold;
+  }
+
+  .reveal {
+    @apply opacity-0 translate-y-10 transition-all duration-700 ease-smooth;
+  }
+
+  .reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+}
