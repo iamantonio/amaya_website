@@ -9,22 +9,28 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
-    <!-- Fonts -->
+    <!-- Fonts - Premium Sports Editorial -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <!-- Navigation -->
-    <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-400 ease-smooth">
+    <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-5 bg-navy/90 backdrop-blur-md transition-all duration-400 ease-smooth">
         <div class="max-w-content mx-auto flex justify-between items-center">
-            <a href="#" class="font-display text-sm font-extrabold tracking-[0.15em] uppercase text-warm-white no-underline">
-                Amaya <span class="text-accent-red">Vargas</span>
+            <a href="#" class="group flex items-center gap-3 no-underline">
+                <span class="w-10 h-10 bg-accent-red flex items-center justify-center font-display text-lg text-warm-white">42</span>
+                <span class="font-heading text-sm font-bold tracking-[0.1em] uppercase text-warm-white">
+                    Amaya <span class="text-gold">Vargas</span>
+                </span>
             </a>
-            <ul id="nav-links" class="hidden lg:flex gap-8 list-none">
+            <ul id="nav-links" class="hidden lg:flex gap-10 list-none">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#stats" class="nav-link">Stats</a></li>
                 <li><a href="#highlights" class="nav-link">Highlights</a></li>
@@ -33,68 +39,52 @@
             </ul>
             <a href="#contact" class="hidden lg:inline-flex btn-secondary py-3 px-6 text-[0.65rem]">Contact</a>
             <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2 bg-transparent border-none cursor-pointer" aria-label="Menu" aria-expanded="false">
-                <span class="block w-6 h-0.5 bg-warm-white transition-all duration-400 ease-smooth"></span>
-                <span class="block w-6 h-0.5 bg-warm-white transition-all duration-400 ease-smooth"></span>
-                <span class="block w-6 h-0.5 bg-warm-white transition-all duration-400 ease-smooth"></span>
+                <span class="block w-7 h-0.5 bg-warm-white transition-all duration-400 ease-smooth origin-center"></span>
+                <span class="block w-7 h-0.5 bg-warm-white transition-all duration-400 ease-smooth"></span>
+                <span class="block w-7 h-0.5 bg-warm-white transition-all duration-400 ease-smooth origin-center"></span>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 top-[72px] bg-navy z-40">
+        <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 top-[80px] bg-navy z-40">
             <div class="flex flex-col items-center justify-center h-full gap-8">
                 <a href="#about" class="mobile-nav-link">About</a>
                 <a href="#stats" class="mobile-nav-link">Stats</a>
                 <a href="#highlights" class="mobile-nav-link">Highlights</a>
                 <a href="#achievements" class="mobile-nav-link">Achievements</a>
                 <a href="#gallery" class="mobile-nav-link">Gallery</a>
-                <a href="#contact" class="btn-primary mt-4">Contact</a>
+                <a href="#contact" class="btn-primary mt-6">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Full-bleed cinematic background -->
     <section class="relative min-h-screen bg-navy overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute inset-0 bg-gradient-radial from-navy-light via-navy to-navy-dark"></div>
-        <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent-red/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-1/4 w-64 h-64 bg-gold/5 rounded-full blur-2xl"></div>
+        <!-- Hero Background Image -->
+        <div class="absolute inset-0 top-16">
+            <picture>
+                <!-- Mobile: portrait-optimized image -->
+                <source
+                    media="(max-width: 768px)"
+                    srcset="assets/images/hero-action-mobile.png"
+                >
+                <!-- Desktop: original landscape image -->
+                <img
+                    src="assets/images/hero-action.png"
+                    alt="Amaya Vargas in action"
+                    class="w-full h-full object-cover object-top"
+                >
+            </picture>
+            <!-- Gradient overlay - bottom only for CTA readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+        </div>
 
-        <!-- Hexagon Pattern (decorative) -->
-        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2728%27 height=%2749%27 viewBox=%270 0 28 49%27%3E%3Cg fill-rule=%27evenodd%27%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%271%27%3E%3Cpath d=%27M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z%27/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-
-        <div class="relative z-10 max-w-content mx-auto px-6 lg:px-12 min-h-screen grid lg:grid-cols-2 gap-8 items-center">
-            <!-- Content -->
-            <div class="pt-24 lg:pt-0">
-                <span class="section-eyebrow opacity-0 animate-fade-up-delay-1">
-                    Forward &bull; Chicago Inter &bull; #42
-                </span>
-                <h1 class="text-hero text-warm-white mb-4 opacity-0 animate-fade-up-delay-2">
-                    Amaya
-                    <span class="block text-accent-red" style="margin-top: -0.1em;">Vargas</span>
-                </h1>
-                <p class="font-body text-xl italic text-slate-light max-w-md mb-8 opacity-0 animate-fade-up-delay-3">
-                    Driven by passion, defined by dedication. Building excellence one match at a time.
-                </p>
-
-                <!-- Hero Stats -->
-                <div class="flex flex-wrap gap-8 lg:gap-12 mb-8 opacity-0 animate-fade-up-delay-4">
-                    <div>
-                        <div class="font-display text-5xl lg:text-6xl font-black text-warm-white" data-count="24">24</div>
-                        <div class="font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mt-1">Goals This Season</div>
-                    </div>
-                    <div>
-                        <div class="font-display text-5xl lg:text-6xl font-black text-warm-white" data-count="12">12</div>
-                        <div class="font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mt-1">Assists</div>
-                    </div>
-                    <div>
-                        <div class="font-display text-5xl lg:text-6xl font-black text-warm-white">#42</div>
-                        <div class="font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mt-1">Jersey Number</div>
-                    </div>
-                </div>
-
+        <!-- Content overlay at bottom -->
+        <div class="relative z-10 min-h-screen flex flex-col justify-end pb-32 lg:pb-40">
+            <div class="max-w-content mx-auto px-6 lg:px-12 w-full">
                 <!-- CTAs -->
-                <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up-delay-5">
+                <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up-delay-4">
                     <a href="#highlights" class="btn-primary">
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7z"/>
                         </svg>
                         Watch Highlights
@@ -102,100 +92,109 @@
                     <a href="#contact" class="btn-secondary">Get In Touch</a>
                 </div>
             </div>
-
-            <!-- Hero Image -->
-            <div class="hidden lg:block relative">
-                <div class="relative aspect-[3/4] bg-navy-light rounded-lg overflow-hidden">
-                    <!-- Gradient overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent z-10"></div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-accent-red/20 to-gold/10"></div>
-
-                    <!-- Placeholder -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate z-20">
-                        <div class="text-[12rem] font-display font-black text-warm-white/5">#42</div>
-                        <div class="absolute bottom-12 font-display text-xs uppercase tracking-[0.2em] text-slate-light">
-                            Add Player Photo
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Decorative elements -->
-                <div class="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-accent-red/20 rounded-lg -z-10"></div>
-                <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-gold/20 rounded-lg -z-10"></div>
-            </div>
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-up-delay-5">
-            <span class="font-display text-[0.6rem] uppercase tracking-[0.2em] text-slate">Scroll</span>
-            <div class="w-px h-12 bg-gradient-to-b from-slate to-transparent animate-pulse-slow"></div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-0 animate-fade-up-delay-5">
+            <span class="font-heading text-[0.65rem] uppercase tracking-[0.3em] text-warm-white/70">Scroll to explore</span>
+            <div class="w-px h-16 bg-gradient-to-b from-gold to-transparent"></div>
         </div>
     </section>
+
+    <!-- Marquee Banner -->
+    <div class="bg-accent-red py-4 overflow-hidden">
+        <div class="marquee-track">
+            <span class="font-display text-2xl text-warm-white/90 flex items-center gap-8">
+                <span>FORWARD</span>
+                <span class="text-warm-white/40">&bull;</span>
+                <span>STRIKER</span>
+                <span class="text-warm-white/40">&bull;</span>
+                <span>GOAL SCORER</span>
+                <span class="text-warm-white/40">&bull;</span>
+                <span>CHICAGO INTER</span>
+                <span class="text-warm-white/40">&bull;</span>
+                <span>#42</span>
+                <span class="text-warm-white/40">&bull;</span>
+            </span>
+            <span class="font-display text-2xl text-warm-white/90 flex items-center gap-8">
+                <span>FORWARD</span>
+                <span class="text-warm-white/40">&bull;</span>
+                <span>STRIKER</span>
+                <span class="text-warm-white/40">&bull;</span>
+                <span>GOAL SCORER</span>
+                <span class="text-warm-white/40">&bull;</span>
+                <span>CHICAGO INTER</span>
+                <span class="text-warm-white/40">&bull;</span>
+                <span>#42</span>
+                <span class="text-warm-white/40">&bull;</span>
+            </span>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="relative py-24 lg:py-32 bg-warm-white overflow-hidden">
         <!-- Background accent -->
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-warm-cream -skew-x-12 origin-top-right"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-warm-cream -skew-x-12 origin-top-right"></div>
 
         <div class="relative max-w-content mx-auto px-6 lg:px-12">
-            <div class="text-left mb-12">
-                <span class="section-eyebrow text-gold">Get To Know</span>
-                <h2 class="section-title text-navy">About Amaya</h2>
-            </div>
-
-            <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-center">
+            <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center">
                 <!-- Image -->
-                <div class="relative reveal">
-                    <div class="aspect-[3/4] bg-warm-cream rounded-2xl overflow-hidden shadow-xl">
+                <div class="relative reveal-left">
+                    <div class="aspect-[3/4] bg-warm-cream rounded-sm overflow-hidden shadow-editorial">
                         <!-- Placeholder -->
                         <div class="absolute inset-0 flex flex-col items-center justify-center text-slate">
                             <svg class="w-16 h-16 mb-4 opacity-30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                             </svg>
-                            <span class="font-display text-xs uppercase tracking-[0.1em]">Action Shot</span>
+                            <span class="font-heading text-xs uppercase tracking-[0.15em]">Action Shot</span>
                         </div>
                     </div>
-                    <!-- Decorative -->
-                    <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent-red/20 rounded-2xl -z-10"></div>
+                    <!-- Decorative frame -->
+                    <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent-red/30 rounded-sm -z-10"></div>
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-gold/20 rounded-sm -z-10"></div>
                 </div>
 
                 <!-- Content -->
-                <div class="reveal">
-                    <h3 class="font-display text-2xl lg:text-3xl font-bold text-navy mb-6">
+                <div class="reveal-right">
+                    <span class="section-eyebrow text-gold">Get To Know</span>
+                    <h2 class="section-title text-navy mb-8 title-underline">ABOUT AMAYA</h2>
+
+                    <h3 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-6">
                         A Rising Star on the Pitch
                     </h3>
-                    <p class="text-slate text-lg mb-4 leading-relaxed">
+
+                    <p class="text-slate text-lg mb-4 leading-relaxed font-body">
                         Amaya is a dynamic forward with an eye for goal and the speed to match. Her technical skills, combined with an unwavering work ethic, make her a formidable presence in any match.
                     </p>
-                    <p class="text-slate text-lg mb-8 leading-relaxed">
+                    <p class="text-slate text-lg mb-10 leading-relaxed font-body">
                         Off the field, she maintains strong academic performance while dedicating herself to becoming the best player she can be. Her coaches describe her as coachable, focused, and a natural leader among her teammates.
                     </p>
 
                     <!-- Player Details Grid -->
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div class="bg-warm-cream p-4 rounded-lg">
-                            <span class="block font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mb-1">Position</span>
-                            <span class="font-display text-lg font-bold text-navy">Forward / Striker</span>
+                        <div class="bg-navy p-5 rounded-sm group hover-lift">
+                            <span class="block font-heading text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold mb-2">Position</span>
+                            <span class="font-display text-xl text-warm-white">FORWARD</span>
                         </div>
-                        <div class="bg-warm-cream p-4 rounded-lg">
-                            <span class="block font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mb-1">Club Team</span>
-                            <span class="font-display text-lg font-bold text-navy">Chicago Inter</span>
+                        <div class="bg-navy p-5 rounded-sm group hover-lift">
+                            <span class="block font-heading text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold mb-2">Club Team</span>
+                            <span class="font-display text-xl text-warm-white">CHICAGO INTER</span>
                         </div>
-                        <div class="bg-warm-cream p-4 rounded-lg">
-                            <span class="block font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mb-1">Dominant Foot</span>
-                            <span class="font-display text-lg font-bold text-navy">Right</span>
+                        <div class="bg-navy p-5 rounded-sm group hover-lift">
+                            <span class="block font-heading text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold mb-2">Dominant Foot</span>
+                            <span class="font-display text-xl text-warm-white">LEFT</span>
                         </div>
-                        <div class="bg-warm-cream p-4 rounded-lg">
-                            <span class="block font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mb-1">Grade</span>
-                            <span class="font-display text-lg font-bold text-navy">Middle School</span>
+                        <div class="bg-navy p-5 rounded-sm group hover-lift">
+                            <span class="block font-heading text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold mb-2">Grade</span>
+                            <span class="font-display text-xl text-warm-white">MIDDLE SCHOOL</span>
                         </div>
-                        <div class="bg-warm-cream p-4 rounded-lg">
-                            <span class="block font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mb-1">Height</span>
-                            <span class="font-display text-lg font-bold text-navy">5'4"</span>
+                        <div class="bg-navy p-5 rounded-sm group hover-lift">
+                            <span class="block font-heading text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold mb-2">Height</span>
+                            <span class="font-display text-xl text-warm-white">5'4"</span>
                         </div>
-                        <div class="bg-warm-cream p-4 rounded-lg">
-                            <span class="block font-display text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate mb-1">GPA</span>
-                            <span class="font-display text-lg font-bold text-navy">3.8</span>
+                        <div class="bg-navy p-5 rounded-sm group hover-lift">
+                            <span class="block font-heading text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold mb-2">GPA</span>
+                            <span class="font-display text-xl text-warm-white">3.8</span>
                         </div>
                     </div>
                 </div>
@@ -204,76 +203,68 @@
     </section>
 
     <!-- Stats Section -->
-    <section id="stats" class="relative py-24 lg:py-32 bg-navy overflow-hidden">
+    <section id="stats" class="relative py-24 lg:py-32 bg-navy overflow-hidden noise-overlay">
         <!-- Background elements -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-accent-red/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-2xl"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-red/5 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[80px]"></div>
 
-        <!-- Hexagon pattern -->
-        <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2728%27 height=%2749%27 viewBox=%270 0 28 49%27%3E%3Cg fill-rule=%27evenodd%27%3E%3Cg fill=%27%23ffffff%27%3E%3Cpath d=%27M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9z%27/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <!-- Stripe pattern -->
+        <div class="absolute inset-0 stripe-pattern"></div>
 
         <div class="relative max-w-content mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <span class="section-eyebrow">Performance</span>
-                <h2 class="section-title text-warm-white">Season Statistics</h2>
+            <div class="text-center mb-16 reveal">
+                <span class="section-eyebrow justify-center">Performance</span>
+                <h2 class="section-title text-warm-white title-underline">SEASON STATISTICS</h2>
             </div>
 
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
                 <!-- Stat Card 1 -->
-                <div class="glass-card p-6 lg:p-8 text-center reveal group">
-                    <div class="font-display text-5xl lg:text-7xl font-black text-gradient mb-2" data-count="24">
-                        24
-                    </div>
-                    <div class="font-display text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-1">
-                        Goals Scored
-                    </div>
-                    <div class="font-body text-sm italic text-warm-white/40">
-                        2024-25 Season
-                    </div>
-                    <!-- Accent line -->
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth"></div>
+                <div class="glass-card p-6 lg:p-8 text-center reveal group rounded-lg">
+                    <div class="stat-value stat-counter mb-2" data-count="24" data-suffix="">0</div>
+                    <div class="stat-label mb-2">Goals Scored</div>
+                    <div class="font-body text-sm italic text-warm-white/40">2024-25 Season</div>
+                    <!-- Animated top border -->
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth origin-left rounded-t-lg"></div>
                 </div>
 
                 <!-- Stat Card 2 -->
-                <div class="glass-card p-6 lg:p-8 text-center reveal group" style="transition-delay: 0.1s;">
-                    <div class="font-display text-5xl lg:text-7xl font-black text-gradient mb-2" data-count="12">
-                        12
-                    </div>
-                    <div class="font-display text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-1">
-                        Assists
-                    </div>
-                    <div class="font-body text-sm italic text-warm-white/40">
-                        2024-25 Season
-                    </div>
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth"></div>
+                <div class="glass-card p-6 lg:p-8 text-center reveal group rounded-lg" style="transition-delay: 0.1s;">
+                    <div class="stat-value stat-counter mb-2" data-count="12" data-suffix="">0</div>
+                    <div class="stat-label mb-2">Assists</div>
+                    <div class="font-body text-sm italic text-warm-white/40">2024-25 Season</div>
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth origin-left rounded-t-lg"></div>
                 </div>
 
                 <!-- Stat Card 3 -->
-                <div class="glass-card p-6 lg:p-8 text-center reveal group" style="transition-delay: 0.2s;">
-                    <div class="font-display text-5xl lg:text-7xl font-black text-gradient mb-2" data-count="18">
-                        18
-                    </div>
-                    <div class="font-display text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-1">
-                        Games Played
-                    </div>
-                    <div class="font-body text-sm italic text-warm-white/40">
-                        2024-25 Season
-                    </div>
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth"></div>
+                <div class="glass-card p-6 lg:p-8 text-center reveal group rounded-lg" style="transition-delay: 0.2s;">
+                    <div class="stat-value stat-counter mb-2" data-count="18" data-suffix="">0</div>
+                    <div class="stat-label mb-2">Games Played</div>
+                    <div class="font-body text-sm italic text-warm-white/40">2024-25 Season</div>
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth origin-left rounded-t-lg"></div>
                 </div>
 
                 <!-- Stat Card 4 -->
-                <div class="glass-card p-6 lg:p-8 text-center reveal group" style="transition-delay: 0.3s;">
-                    <div class="font-display text-5xl lg:text-7xl font-black text-gradient mb-2">
-                        78<span class="text-3xl lg:text-5xl">%</span>
-                    </div>
-                    <div class="font-display text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-1">
-                        Shot Accuracy
-                    </div>
-                    <div class="font-body text-sm italic text-warm-white/40">
-                        2024-25 Season
-                    </div>
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth"></div>
+                <div class="glass-card p-6 lg:p-8 text-center reveal group rounded-lg" style="transition-delay: 0.3s;">
+                    <div class="stat-value stat-counter mb-2" data-count="78" data-suffix="%">0%</div>
+                    <div class="stat-label mb-2">Shot Accuracy</div>
+                    <div class="font-body text-sm italic text-warm-white/40">2024-25 Season</div>
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth origin-left rounded-t-lg"></div>
+                </div>
+            </div>
+
+            <!-- Additional stats row -->
+            <div class="mt-12 grid grid-cols-3 gap-6 max-w-2xl mx-auto reveal" style="transition-delay: 0.4s;">
+                <div class="text-center">
+                    <div class="font-display text-4xl lg:text-5xl text-gold stat-counter" data-count="7" data-suffix="">0</div>
+                    <div class="font-heading text-[0.6rem] uppercase tracking-[0.15em] text-slate mt-2">Hat Tricks</div>
+                </div>
+                <div class="text-center border-x border-white/10">
+                    <div class="font-display text-4xl lg:text-5xl text-gold stat-counter" data-count="91" data-suffix="%">0%</div>
+                    <div class="font-heading text-[0.6rem] uppercase tracking-[0.15em] text-slate mt-2">Games Started</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-display text-4xl lg:text-5xl text-gold stat-counter" data-count="14" data-suffix="">0</div>
+                    <div class="font-heading text-[0.6rem] uppercase tracking-[0.15em] text-slate mt-2">Man of Match</div>
                 </div>
             </div>
         </div>
@@ -281,43 +272,48 @@
 
     <!-- Highlights Section -->
     <section id="highlights" class="relative py-24 lg:py-32 bg-warm-white overflow-hidden">
-        <!-- Angled top border -->
-        <div class="absolute top-0 left-0 right-0 h-24 bg-navy" style="clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);"></div>
+        <!-- Angled top -->
+        <div class="absolute top-0 left-0 right-0 h-32 bg-navy" style="clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);"></div>
 
-        <div class="relative max-w-content mx-auto px-6 lg:px-12 pt-8">
-            <div class="text-left mb-12">
+        <div class="relative max-w-content mx-auto px-6 lg:px-12 pt-12">
+            <div class="mb-12 reveal">
                 <span class="section-eyebrow text-gold">Watch</span>
-                <h2 class="section-title text-navy">Highlight Reel</h2>
+                <h2 class="section-title text-navy title-underline">HIGHLIGHT REEL</h2>
             </div>
 
             <div class="grid lg:grid-cols-[2fr_1fr] gap-6">
                 <!-- Main Video -->
-                <div class="relative aspect-video bg-navy rounded-xl overflow-hidden cursor-pointer group reveal">
+                <div class="relative aspect-video bg-navy rounded-lg overflow-hidden cursor-pointer group reveal">
                     <!-- Placeholder -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center">
+                    <div class="absolute inset-0">
                         <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent"></div>
-                        <div class="relative z-10 text-[8rem] font-display font-black text-warm-white/5">#42</div>
-                        <span class="relative z-10 font-display text-xs uppercase tracking-[0.2em] text-slate-light">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="font-display text-[10rem] lg:text-[14rem] text-warm-white/5 leading-none">#42</div>
+                        </div>
+                        <span class="absolute bottom-8 left-8 font-heading text-sm uppercase tracking-[0.15em] text-slate-light">
                             Highlight Reel Coming Soon
                         </span>
                     </div>
 
                     <!-- Play button -->
                     <div class="absolute inset-0 flex items-center justify-center z-20">
-                        <div class="w-20 h-20 bg-accent-red rounded-full flex items-center justify-center transition-all duration-400 ease-smooth group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-accent-red/30">
-                            <svg class="w-6 h-6 text-warm-white ml-1" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
+                        <div class="relative">
+                            <div class="w-24 h-24 bg-accent-red rounded-full flex items-center justify-center transition-all duration-400 ease-smooth group-hover:scale-110 shadow-glow-red">
+                                <svg class="w-8 h-8 text-warm-white ml-1" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                            <!-- Pulse rings -->
+                            <div class="absolute inset-0 w-24 h-24 bg-accent-red/30 rounded-full animate-ping"></div>
                         </div>
-                        <!-- Pulse ring -->
-                        <div class="absolute w-20 h-20 bg-accent-red/20 rounded-full animate-ping"></div>
                     </div>
 
                     <!-- Label -->
-                    <div class="absolute bottom-4 left-4 z-20">
-                        <span class="font-display text-xs font-bold uppercase tracking-[0.1em] text-warm-white">
+                    <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end z-20">
+                        <span class="font-display text-lg uppercase tracking-[0.05em] text-warm-white">
                             Full Season Highlights
                         </span>
+                        <span class="font-heading text-xs text-slate">2:45</span>
                     </div>
                 </div>
 
@@ -326,34 +322,33 @@
                     <!-- Thumb 1 -->
                     <div class="relative flex-1 aspect-video bg-warm-cream rounded-lg overflow-hidden cursor-pointer group reveal" style="transition-delay: 0.1s;">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-10 h-10 bg-navy/80 rounded-full flex items-center justify-center transition-all duration-400 group-hover:bg-accent-red">
+                            <div class="w-12 h-12 bg-navy/80 rounded-full flex items-center justify-center transition-all duration-400 group-hover:bg-accent-red group-hover:scale-110">
                                 <svg class="w-4 h-4 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
                         </div>
-                        <div class="absolute top-2 left-2 font-display text-[0.6rem] font-bold text-navy/30">01</div>
-                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-navy/80 to-transparent">
-                            <span class="font-display text-[0.65rem] font-semibold uppercase tracking-[0.05em] text-warm-white">
+                        <div class="absolute top-3 left-3 font-display text-sm text-navy/20">01</div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-navy/90 to-transparent">
+                            <span class="font-display text-sm uppercase tracking-[0.05em] text-warm-white">
                                 Goals Compilation
                             </span>
                         </div>
-                        <!-- Hover border -->
                         <div class="absolute inset-0 border-2 border-transparent group-hover:border-accent-red rounded-lg transition-colors duration-400"></div>
                     </div>
 
                     <!-- Thumb 2 -->
                     <div class="relative flex-1 aspect-video bg-warm-cream rounded-lg overflow-hidden cursor-pointer group reveal" style="transition-delay: 0.2s;">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-10 h-10 bg-navy/80 rounded-full flex items-center justify-center transition-all duration-400 group-hover:bg-accent-red">
+                            <div class="w-12 h-12 bg-navy/80 rounded-full flex items-center justify-center transition-all duration-400 group-hover:bg-accent-red group-hover:scale-110">
                                 <svg class="w-4 h-4 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
                         </div>
-                        <div class="absolute top-2 left-2 font-display text-[0.6rem] font-bold text-navy/30">02</div>
-                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-navy/80 to-transparent">
-                            <span class="font-display text-[0.65rem] font-semibold uppercase tracking-[0.05em] text-warm-white">
+                        <div class="absolute top-3 left-3 font-display text-sm text-navy/20">02</div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-navy/90 to-transparent">
+                            <span class="font-display text-sm uppercase tracking-[0.05em] text-warm-white">
                                 Skills & Footwork
                             </span>
                         </div>
@@ -363,15 +358,15 @@
                     <!-- Thumb 3 -->
                     <div class="relative flex-1 aspect-video bg-warm-cream rounded-lg overflow-hidden cursor-pointer group reveal" style="transition-delay: 0.3s;">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-10 h-10 bg-navy/80 rounded-full flex items-center justify-center transition-all duration-400 group-hover:bg-accent-red">
+                            <div class="w-12 h-12 bg-navy/80 rounded-full flex items-center justify-center transition-all duration-400 group-hover:bg-accent-red group-hover:scale-110">
                                 <svg class="w-4 h-4 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
                         </div>
-                        <div class="absolute top-2 left-2 font-display text-[0.6rem] font-bold text-navy/30">03</div>
-                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-navy/80 to-transparent">
-                            <span class="font-display text-[0.65rem] font-semibold uppercase tracking-[0.05em] text-warm-white">
+                        <div class="absolute top-3 left-3 font-display text-sm text-navy/20">03</div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-navy/90 to-transparent">
+                            <span class="font-display text-sm uppercase tracking-[0.05em] text-warm-white">
                                 Full Game Film
                             </span>
                         </div>
@@ -383,95 +378,83 @@
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="relative py-24 lg:py-32 bg-navy overflow-hidden">
+    <section id="achievements" class="relative py-24 lg:py-32 bg-navy overflow-hidden noise-overlay">
         <!-- Background accents -->
-        <div class="absolute top-1/4 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-red/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/4 left-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent-red/5 rounded-full blur-[100px]"></div>
+
+        <div class="absolute inset-0 stripe-pattern"></div>
 
         <div class="relative max-w-content mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <span class="section-eyebrow">Recognition</span>
-                <h2 class="section-title text-warm-white">Achievements & Awards</h2>
+            <div class="text-center mb-16 reveal">
+                <span class="section-eyebrow justify-center">Recognition</span>
+                <h2 class="section-title text-warm-white title-underline">ACHIEVEMENTS & AWARDS</h2>
             </div>
 
             <!-- Featured Achievement -->
-            <div class="glass-card p-8 lg:p-12 mb-8 reveal group">
-                <div class="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-12">
-                    <div class="w-16 h-16 lg:w-20 lg:h-20 bg-gold rounded-xl flex items-center justify-center shadow-lg shadow-gold/20">
-                        <svg class="w-8 h-8 lg:w-10 lg:h-10 text-navy" viewBox="0 0 24 24" fill="currentColor">
+            <div class="glass-card p-8 lg:p-12 mb-10 reveal group rounded-xl">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
+                    <div class="w-20 h-20 lg:w-24 lg:h-24 bg-gold rounded-xl flex items-center justify-center shadow-glow-gold flex-shrink-0">
+                        <svg class="w-10 h-10 lg:w-12 lg:h-12 text-navy" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
                         </svg>
                     </div>
                     <div class="flex-1">
-                        <span class="font-display text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2024</span>
-                        <h4 class="font-display text-2xl lg:text-3xl font-bold text-warm-white mt-1 mb-2">Tournament MVP</h4>
-                        <p class="text-slate-light text-lg">Most Valuable Player at the Regional Spring Classic, leading the team to victory with outstanding performance.</p>
+                        <span class="inline-block px-3 py-1 bg-accent-red/20 rounded font-heading text-xs font-bold uppercase tracking-[0.15em] text-accent-red mb-3">2024 MVP</span>
+                        <h4 class="font-display text-3xl lg:text-4xl text-warm-white mb-3">TOURNAMENT MVP</h4>
+                        <p class="text-slate-light text-lg font-body">Most Valuable Player at the Regional Spring Classic, leading the team to victory with outstanding performance throughout the tournament.</p>
                     </div>
                 </div>
-                <!-- Gradient border effect -->
-                <div class="absolute inset-0 rounded-lg bg-gradient-cta opacity-0 group-hover:opacity-100 transition-opacity duration-400 -z-10 blur-xl"></div>
             </div>
 
             <!-- Achievement Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Achievement 1 -->
-                <div class="glass-card p-6 reveal group" style="transition-delay: 0.1s;">
+                <div class="achievement-badge reveal" style="transition-delay: 0.1s;">
                     <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/>
                         </svg>
                     </div>
-                    <span class="font-display text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2024</span>
-                    <h4 class="font-display text-xl font-bold text-warm-white mt-1 mb-2">League Champions</h4>
-                    <p class="text-slate text-sm">Led team to first place in the competitive spring league.</p>
+                    <span class="font-heading text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2024</span>
+                    <h4 class="font-display text-2xl text-warm-white mt-2 mb-3">LEAGUE CHAMPIONS</h4>
+                    <p class="text-slate text-sm font-body">Led team to first place in the competitive spring league.</p>
                 </div>
 
                 <!-- Achievement 2 -->
-                <div class="glass-card p-6 reveal group" style="transition-delay: 0.15s;">
+                <div class="achievement-badge reveal" style="transition-delay: 0.15s;">
                     <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
                     </div>
-                    <span class="font-display text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2023-24</span>
-                    <h4 class="font-display text-xl font-bold text-warm-white mt-1 mb-2">Golden Boot</h4>
-                    <p class="text-slate text-sm">Top scorer of the season with 24 goals.</p>
+                    <span class="font-heading text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2023-24</span>
+                    <h4 class="font-display text-2xl text-warm-white mt-2 mb-3">GOLDEN BOOT</h4>
+                    <p class="text-slate text-sm font-body">Top scorer of the season with 24 goals.</p>
                 </div>
 
                 <!-- Achievement 3 -->
-                <div class="glass-card p-6 reveal group" style="transition-delay: 0.2s;">
+                <div class="achievement-badge reveal" style="transition-delay: 0.2s;">
                     <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9z"/>
                         </svg>
                     </div>
-                    <span class="font-display text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2024</span>
-                    <h4 class="font-display text-xl font-bold text-warm-white mt-1 mb-2">Honor Roll</h4>
-                    <p class="text-slate text-sm">Maintained academic excellence while excelling on the field.</p>
+                    <span class="font-heading text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2024</span>
+                    <h4 class="font-display text-2xl text-warm-white mt-2 mb-3">HONOR ROLL</h4>
+                    <p class="text-slate text-sm font-body">Maintained academic excellence while excelling on the field.</p>
                 </div>
 
                 <!-- Achievement 4 -->
-                <div class="glass-card p-6 reveal group" style="transition-delay: 0.25s;">
-                    <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                        </svg>
-                    </div>
-                    <span class="font-display text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2024</span>
-                    <h4 class="font-display text-xl font-bold text-warm-white mt-1 mb-2">Team Captain</h4>
-                    <p class="text-slate text-sm">Selected by coaches to lead the team as captain.</p>
-                </div>
-
-                <!-- Achievement 5 -->
-                <div class="glass-card p-6 reveal group" style="transition-delay: 0.3s;">
+                <div class="achievement-badge reveal" style="transition-delay: 0.25s;">
                     <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                         </svg>
                     </div>
-                    <span class="font-display text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2023</span>
-                    <h4 class="font-display text-xl font-bold text-warm-white mt-1 mb-2">All-Star Selection</h4>
-                    <p class="text-slate text-sm">Selected for the regional all-star team.</p>
+                    <span class="font-heading text-xs font-bold uppercase tracking-[0.15em] text-accent-red">2023</span>
+                    <h4 class="font-display text-2xl text-warm-white mt-2 mb-3">ALL-STAR SELECTION</h4>
+                    <p class="text-slate text-sm font-body">Selected for the regional all-star team.</p>
                 </div>
             </div>
         </div>
@@ -480,81 +463,81 @@
     <!-- Gallery Section -->
     <section id="gallery" class="relative py-24 lg:py-32 bg-warm-white overflow-hidden">
         <div class="max-w-content mx-auto px-6 lg:px-12">
-            <div class="text-left mb-12">
+            <div class="mb-12 reveal">
                 <span class="section-eyebrow text-gold">In Action</span>
-                <h2 class="section-title text-navy">Photo Gallery</h2>
+                <h2 class="section-title text-navy title-underline">PHOTO GALLERY</h2>
             </div>
 
             <!-- Masonry-style Grid -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
                 <!-- Large Feature Image -->
-                <div class="col-span-2 row-span-2 relative aspect-square lg:aspect-auto bg-warm-cream rounded-xl overflow-hidden cursor-pointer group reveal">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate">
-                        <div class="font-display text-6xl font-black text-navy/5">01</div>
+                <div class="col-span-2 row-span-2 gallery-item aspect-square lg:aspect-auto bg-warm-cream rounded-lg reveal">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate placeholder">
+                        <div class="font-display text-8xl text-navy/5">01</div>
                         <svg class="w-12 h-12 opacity-30 mb-2" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
-                        <span class="font-display text-xs uppercase tracking-[0.1em]">Add Photo</span>
+                        <span class="font-heading text-xs uppercase tracking-[0.15em]">Add Photo</span>
                     </div>
                     <!-- Hover overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                    <span class="absolute bottom-4 left-4 font-display text-sm font-bold uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-5 left-5 font-display text-lg uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
                         Match Day
                     </span>
                 </div>
 
                 <!-- Image 2 -->
-                <div class="relative aspect-square bg-warm-cream rounded-xl overflow-hidden cursor-pointer group reveal" style="transition-delay: 0.1s;">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate">
-                        <div class="font-display text-4xl font-black text-navy/5">02</div>
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.1s;">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate placeholder">
+                        <div class="font-display text-5xl text-navy/5">02</div>
                         <svg class="w-8 h-8 opacity-30" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                    <span class="absolute bottom-3 left-3 font-display text-xs font-bold uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-4 left-4 font-display text-sm uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
                         Training
                     </span>
                 </div>
 
                 <!-- Image 3 -->
-                <div class="relative aspect-square bg-warm-cream rounded-xl overflow-hidden cursor-pointer group reveal" style="transition-delay: 0.15s;">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate">
-                        <div class="font-display text-4xl font-black text-navy/5">03</div>
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.15s;">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate placeholder">
+                        <div class="font-display text-5xl text-navy/5">03</div>
                         <svg class="w-8 h-8 opacity-30" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                    <span class="absolute bottom-3 left-3 font-display text-xs font-bold uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-4 left-4 font-display text-sm uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
                         Celebration
                     </span>
                 </div>
 
                 <!-- Image 4 -->
-                <div class="relative aspect-square bg-warm-cream rounded-xl overflow-hidden cursor-pointer group reveal" style="transition-delay: 0.2s;">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate">
-                        <div class="font-display text-4xl font-black text-navy/5">04</div>
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.2s;">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate placeholder">
+                        <div class="font-display text-5xl text-navy/5">04</div>
                         <svg class="w-8 h-8 opacity-30" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                    <span class="absolute bottom-3 left-3 font-display text-xs font-bold uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-4 left-4 font-display text-sm uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
                         Tournament
                     </span>
                 </div>
 
                 <!-- Image 5 -->
-                <div class="relative aspect-square bg-warm-cream rounded-xl overflow-hidden cursor-pointer group reveal" style="transition-delay: 0.25s;">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate">
-                        <div class="font-display text-4xl font-black text-navy/5">05</div>
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.25s;">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate placeholder">
+                        <div class="font-display text-5xl text-navy/5">05</div>
                         <svg class="w-8 h-8 opacity-30" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                    <span class="absolute bottom-3 left-3 font-display text-xs font-bold uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-4 left-4 font-display text-sm uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
                         Team Spirit
                     </span>
                 </div>
@@ -564,148 +547,146 @@
 
     <!-- Testimonials Section -->
     <section class="relative py-24 lg:py-32 bg-warm-cream overflow-hidden">
-        <!-- Large quote marks as background -->
-        <div class="absolute top-12 left-8 lg:left-16 text-[15rem] font-display font-black text-navy/[0.03] leading-none select-none">"</div>
+        <!-- Large quote mark watermark -->
+        <div class="absolute top-8 left-8 lg:left-16 font-body text-[20rem] text-navy/[0.02] leading-none select-none">"</div>
 
         <div class="relative max-w-content mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <span class="section-eyebrow text-gold">What They Say</span>
-                <h2 class="section-title text-navy">Coach Testimonials</h2>
+            <div class="text-center mb-16 reveal">
+                <span class="section-eyebrow text-gold justify-center">What They Say</span>
+                <h2 class="section-title text-navy title-underline">COACH TESTIMONIALS</h2>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
                 <!-- Testimonial 1 -->
-                <div class="bg-warm-white p-8 lg:p-10 rounded-2xl shadow-lg relative reveal group">
+                <div class="bg-warm-white p-8 lg:p-12 rounded-lg shadow-editorial relative reveal group">
                     <!-- Quote icon -->
-                    <div class="absolute -top-4 left-8 w-12 h-12 bg-accent-red rounded-full flex items-center justify-center shadow-lg">
-                        <svg class="w-5 h-5 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
+                    <div class="absolute -top-5 left-10 w-14 h-14 bg-accent-red rounded-xl flex items-center justify-center shadow-lg transform -rotate-6 group-hover:rotate-0 transition-transform duration-400">
+                        <svg class="w-6 h-6 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
                         </svg>
                     </div>
 
-                    <p class="font-body text-xl italic text-slate leading-relaxed mb-8 pt-4">
-                        "Amaya has exceptional game intelligence for her age. Her ability to read plays and position herself is outstanding. She's the kind of player every coach wants on their team."
+                    <p class="editorial-quote pt-6 mb-8">
+                        Amaya has exceptional game intelligence for her age. Her ability to read plays and position herself is outstanding. She's the kind of player every coach wants on their team.
                     </p>
 
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-warm-cream rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-slate" viewBox="0 0 24 24" fill="currentColor">
+                    <div class="flex items-center gap-5">
+                        <div class="w-16 h-16 bg-warm-cream rounded-full flex items-center justify-center">
+                            <svg class="w-8 h-8 text-slate" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-display text-lg font-bold text-navy">Coach Name</h4>
-                            <p class="font-display text-xs uppercase tracking-[0.1em] text-slate">Chicago Inter &bull; Head Coach</p>
+                            <h4 class="font-heading text-lg font-bold text-navy">Coach Name</h4>
+                            <p class="font-heading text-xs uppercase tracking-[0.15em] text-slate">Chicago Inter &bull; Head Coach</p>
                         </div>
                     </div>
 
-                    <!-- Decorative corner -->
-                    <div class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-accent-red/5 to-transparent rounded-br-2xl"></div>
+                    <!-- Decorative accent -->
+                    <div class="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent-red/5 to-transparent rounded-br-lg"></div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-warm-white p-8 lg:p-10 rounded-2xl shadow-lg relative reveal group" style="transition-delay: 0.15s;">
-                    <div class="absolute -top-4 left-8 w-12 h-12 bg-gold rounded-full flex items-center justify-center shadow-lg">
-                        <svg class="w-5 h-5 text-navy" viewBox="0 0 24 24" fill="currentColor">
+                <div class="bg-warm-white p-8 lg:p-12 rounded-lg shadow-editorial relative reveal group" style="transition-delay: 0.15s;">
+                    <div class="absolute -top-5 left-10 w-14 h-14 bg-gold rounded-xl flex items-center justify-center shadow-lg transform rotate-6 group-hover:rotate-0 transition-transform duration-400">
+                        <svg class="w-6 h-6 text-navy" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
                         </svg>
                     </div>
 
-                    <p class="font-body text-xl italic text-slate leading-relaxed mb-8 pt-4">
-                        "Her work ethic is unmatched. First to arrive at practice, last to leave. Amaya leads by example and elevates everyone around her. A true team player with elite individual skills."
+                    <p class="editorial-quote pt-6 mb-8">
+                        Her work ethic is unmatched. First to arrive at practice, last to leave. Amaya leads by example and elevates everyone around her. A true team player with elite individual skills.
                     </p>
 
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-warm-cream rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-slate" viewBox="0 0 24 24" fill="currentColor">
+                    <div class="flex items-center gap-5">
+                        <div class="w-16 h-16 bg-warm-cream rounded-full flex items-center justify-center">
+                            <svg class="w-8 h-8 text-slate" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-display text-lg font-bold text-navy">Coach Name</h4>
-                            <p class="font-display text-xs uppercase tracking-[0.1em] text-slate">Chicago Inter &bull; Assistant Coach</p>
+                            <h4 class="font-heading text-lg font-bold text-navy">Coach Name</h4>
+                            <p class="font-heading text-xs uppercase tracking-[0.15em] text-slate">Chicago Inter &bull; Assistant Coach</p>
                         </div>
                     </div>
 
-                    <div class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-gold/5 to-transparent rounded-br-2xl"></div>
+                    <div class="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-gold/5 to-transparent rounded-br-lg"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="relative py-24 lg:py-32 bg-navy overflow-hidden">
+    <section id="contact" class="relative py-24 lg:py-32 bg-navy overflow-hidden noise-overlay">
         <!-- Background elements -->
         <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-navy-dark to-transparent"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent-red/5 rounded-full blur-3xl"></div>
-        <div class="absolute top-1/4 left-0 w-64 h-64 bg-gold/5 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent-red/5 rounded-full blur-[100px]"></div>
+        <div class="absolute top-1/4 left-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[80px]"></div>
+
+        <div class="absolute inset-0 stripe-pattern"></div>
 
         <div class="relative max-w-content mx-auto px-6 lg:px-12">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                 <!-- Content Side -->
-                <div class="reveal">
+                <div class="reveal-left">
                     <span class="section-eyebrow">Get In Touch</span>
-                    <h2 class="section-title text-warm-white mb-6">Let's Connect</h2>
-                    <p class="text-slate-light text-lg leading-relaxed mb-8">
+                    <h2 class="section-title text-warm-white mb-8 title-underline">LET'S CONNECT</h2>
+                    <p class="text-slate-light text-lg leading-relaxed mb-10 font-body">
                         Interested in learning more about Amaya? Reach out for recruitment inquiries, showcase events, or any questions.
                     </p>
 
                     <!-- Contact Info -->
                     <div class="space-y-6">
-                        <div class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 bg-warm-white/10 rounded-lg flex items-center justify-center group-hover:bg-accent-red transition-colors duration-400">
-                                <svg class="w-5 h-5 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="mailto:contact@amayavargas.com" class="flex items-center gap-5 group">
+                            <div class="w-14 h-14 bg-warm-white/10 rounded-lg flex items-center justify-center group-hover:bg-accent-red transition-all duration-400">
+                                <svg class="w-6 h-6 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                                 </svg>
                             </div>
-                            <span class="font-display text-warm-white">contact@amayavargas.com</span>
-                        </div>
+                            <span class="font-heading text-warm-white group-hover:text-gold transition-colors duration-400">contact@amayavargas.com</span>
+                        </a>
 
-                        <div class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 bg-warm-white/10 rounded-lg flex items-center justify-center group-hover:bg-accent-red transition-colors duration-400">
-                                <svg class="w-5 h-5 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
+                        <div class="flex items-center gap-5 group">
+                            <div class="w-14 h-14 bg-warm-white/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                                 </svg>
                             </div>
-                            <span class="font-display text-warm-white">Chicago, Illinois</span>
+                            <span class="font-heading text-warm-white">Chicago, Illinois</span>
                         </div>
                     </div>
 
                     <!-- Decorative jersey number -->
-                    <div class="hidden lg:block mt-12">
-                        <div class="text-[10rem] font-display font-black text-warm-white/[0.03] leading-none">#42</div>
+                    <div class="hidden lg:block mt-16">
+                        <div class="font-display text-[12rem] text-warm-white/[0.02] leading-none">#42</div>
                     </div>
                 </div>
 
                 <!-- Form Side -->
-                <form class="contact-form bg-warm-white/5 backdrop-blur-sm border border-warm-white/10 rounded-2xl p-8 lg:p-10 reveal" style="transition-delay: 0.15s;">
+                <form class="contact-form glass-card rounded-xl p-8 lg:p-10 reveal-right">
                     <div class="space-y-6">
                         <div>
-                            <label for="name" class="block font-display text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-2">Your Name</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full bg-warm-white/5 border border-warm-white/20 rounded-lg px-4 py-3 text-warm-white placeholder-slate focus:outline-none focus:border-accent-red focus:ring-1 focus:ring-accent-red transition-colors duration-400">
+                            <label for="name" class="block font-heading text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-3">Your Name</label>
+                            <input type="text" id="name" name="name" required class="form-input">
                         </div>
 
                         <div>
-                            <label for="email" class="block font-display text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-2">Email Address</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full bg-warm-white/5 border border-warm-white/20 rounded-lg px-4 py-3 text-warm-white placeholder-slate focus:outline-none focus:border-accent-red focus:ring-1 focus:ring-accent-red transition-colors duration-400">
+                            <label for="email" class="block font-heading text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-3">Email Address</label>
+                            <input type="email" id="email" name="email" required class="form-input">
                         </div>
 
                         <div>
-                            <label for="subject" class="block font-display text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-2">Subject</label>
-                            <input type="text" id="subject" name="subject" required
-                                class="w-full bg-warm-white/5 border border-warm-white/20 rounded-lg px-4 py-3 text-warm-white placeholder-slate focus:outline-none focus:border-accent-red focus:ring-1 focus:ring-accent-red transition-colors duration-400">
+                            <label for="subject" class="block font-heading text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-3">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="form-input">
                         </div>
 
                         <div>
-                            <label for="message" class="block font-display text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" required
-                                class="w-full bg-warm-white/5 border border-warm-white/20 rounded-lg px-4 py-3 text-warm-white placeholder-slate focus:outline-none focus:border-accent-red focus:ring-1 focus:ring-accent-red transition-colors duration-400 resize-none"></textarea>
+                            <label for="message" class="block font-heading text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-3">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="form-input resize-none"></textarea>
                         </div>
 
                         <button type="submit" class="w-full btn-primary justify-center">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
                             </svg>
                             Send Message
@@ -717,27 +698,30 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy-dark py-12 border-t border-warm-white/10">
+    <footer class="bg-navy-dark py-16 border-t border-warm-white/10">
         <div class="max-w-content mx-auto px-6 lg:px-12">
-            <div class="flex flex-col lg:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-10">
                 <!-- Logo -->
-                <a href="#" class="font-display text-lg font-extrabold tracking-[0.1em] uppercase text-warm-white">
-                    Amaya <span class="text-accent-red">Vargas</span>
+                <a href="#" class="group flex items-center gap-3 no-underline">
+                    <span class="w-12 h-12 bg-accent-red flex items-center justify-center font-display text-xl text-warm-white group-hover:bg-gold transition-colors duration-400">42</span>
+                    <span class="font-heading text-lg font-bold tracking-[0.1em] uppercase text-warm-white">
+                        Amaya <span class="text-gold">Vargas</span>
+                    </span>
                 </a>
 
                 <!-- Social Links -->
                 <div class="flex items-center gap-4">
-                    <a href="#" aria-label="Instagram" class="w-10 h-10 bg-warm-white/10 rounded-full flex items-center justify-center hover:bg-accent-red transition-colors duration-400">
+                    <a href="#" aria-label="Instagram" class="w-12 h-12 bg-warm-white/10 rounded-lg flex items-center justify-center hover:bg-accent-red hover:-translate-y-1 transition-all duration-400">
                         <svg class="w-5 h-5 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                         </svg>
                     </a>
-                    <a href="#" aria-label="Twitter/X" class="w-10 h-10 bg-warm-white/10 rounded-full flex items-center justify-center hover:bg-accent-red transition-colors duration-400">
+                    <a href="#" aria-label="Twitter/X" class="w-12 h-12 bg-warm-white/10 rounded-lg flex items-center justify-center hover:bg-accent-red hover:-translate-y-1 transition-all duration-400">
                         <svg class="w-5 h-5 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                    <a href="#" aria-label="YouTube" class="w-10 h-10 bg-warm-white/10 rounded-full flex items-center justify-center hover:bg-accent-red transition-colors duration-400">
+                    <a href="#" aria-label="YouTube" class="w-12 h-12 bg-warm-white/10 rounded-lg flex items-center justify-center hover:bg-accent-red hover:-translate-y-1 transition-all duration-400">
                         <svg class="w-5 h-5 text-warm-white" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                         </svg>
@@ -745,7 +729,7 @@
                 </div>
 
                 <!-- Copyright -->
-                <p class="font-display text-xs uppercase tracking-[0.1em] text-slate">
+                <p class="font-heading text-xs uppercase tracking-[0.15em] text-slate">
                     &copy; 2024 Amaya Vargas. All rights reserved.
                 </p>
             </div>

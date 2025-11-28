@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   PREMIUM SPORTS EDITORIAL - Custom Styles
+   ============================================ */
+
 /* Base layer customizations */
 @layer base {
   html {
@@ -15,7 +19,12 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-display font-extrabold;
+    @apply font-display;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    @apply bg-accent-red text-warm-white;
   }
 
   /* Respect reduced motion preferences */
@@ -28,46 +37,97 @@
   }
 }
 
-/* Component layer for reusable patterns */
+/* ============================================
+   Component layer for reusable patterns
+   ============================================ */
 @layer components {
+  /* ----- Buttons ----- */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-8 py-4
-           bg-gradient-cta text-warm-white font-display font-bold
-           text-xs uppercase tracking-widest
-           transition-all duration-400 ease-smooth
-           hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-red/30;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center gap-2 px-8 py-4
-           bg-transparent text-warm-white font-display font-bold
-           text-xs uppercase tracking-widest
-           border-2 border-warm-white/50
-           transition-all duration-400 ease-smooth
-           hover:bg-warm-white hover:text-navy hover:-translate-y-0.5;
-  }
-
-  .section-eyebrow {
-    @apply font-display text-xs font-bold uppercase tracking-[0.2em] text-gold mb-2;
-  }
-
-  .section-title {
-    @apply text-section font-extrabold;
-  }
-
-  .glass-card {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10
+    @apply relative inline-flex items-center gap-3 px-8 py-4
+           bg-gradient-cta text-warm-white font-heading font-bold
+           text-xs uppercase tracking-[0.15em]
+           overflow-hidden
            transition-all duration-400 ease-smooth;
   }
 
-  .glass-card:hover {
-    @apply bg-white/10 -translate-y-1;
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-white/20
+           translate-x-[-100%] skew-x-12
+           transition-transform duration-600 ease-smooth;
   }
 
+  .btn-primary:hover {
+    @apply -translate-y-1 shadow-glow-red;
+  }
+
+  .btn-primary:hover::before {
+    @apply translate-x-[100%];
+  }
+
+  .btn-secondary {
+    @apply relative inline-flex items-center gap-3 px-8 py-4
+           bg-transparent text-warm-white font-heading font-bold
+           text-xs uppercase tracking-[0.15em]
+           border-2 border-warm-white/40
+           overflow-hidden
+           transition-all duration-400 ease-smooth;
+  }
+
+  .btn-secondary::before {
+    content: '';
+    @apply absolute inset-0 bg-warm-white
+           scale-x-0 origin-left
+           transition-transform duration-400 ease-smooth;
+    z-index: -1;
+  }
+
+  .btn-secondary:hover {
+    @apply text-navy border-warm-white -translate-y-1;
+  }
+
+  .btn-secondary:hover::before {
+    @apply scale-x-100;
+  }
+
+  /* ----- Section Typography ----- */
+  .section-eyebrow {
+    @apply font-heading text-xs font-bold uppercase tracking-[0.25em] text-gold mb-3
+           flex items-center gap-4;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    @apply w-12 h-px bg-gold;
+  }
+
+  .section-title {
+    @apply font-display text-section uppercase tracking-wide;
+  }
+
+  /* ----- Glass Card ----- */
+  .glass-card {
+    @apply relative bg-white/5 backdrop-blur-md border border-white/10
+           overflow-hidden
+           transition-all duration-400 ease-smooth;
+  }
+
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-5 pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .glass-card:hover {
+    @apply bg-white/10 -translate-y-2 border-white/20;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ----- Navigation ----- */
   .nav-link {
-    @apply font-display text-xs font-semibold uppercase tracking-[0.1em]
+    @apply font-heading text-xs font-semibold uppercase tracking-[0.12em]
            text-warm-white/70 no-underline relative
-           transition-colors duration-400 ease-smooth
+           transition-all duration-400 ease-smooth
            hover:text-warm-white;
   }
 
@@ -82,23 +142,300 @@
   }
 
   .mobile-nav-link {
-    @apply font-display text-2xl font-bold text-warm-white no-underline
-           transition-colors duration-400 ease-smooth
-           hover:text-gold;
+    @apply font-display text-4xl text-warm-white no-underline
+           transition-all duration-400 ease-smooth
+           hover:text-gold hover:tracking-wider;
+  }
+
+  /* ----- Stat Display ----- */
+  .stat-value {
+    @apply font-display text-stat text-warm-white;
+    text-shadow: 0 0 40px rgba(244, 162, 97, 0.3);
+  }
+
+  .stat-label {
+    @apply font-heading text-xs font-semibold uppercase tracking-[0.2em] text-slate-light;
+  }
+
+  /* ----- Editorial Quote ----- */
+  .editorial-quote {
+    @apply font-body text-2xl lg:text-3xl italic text-slate leading-relaxed;
+    quotes: '"' '"' ''' ''';
+  }
+
+  .editorial-quote::before {
+    content: open-quote;
+    @apply text-gold text-6xl leading-none mr-2 float-left;
+    font-family: Georgia, serif;
+  }
+
+  /* ----- Achievement Badge ----- */
+  .achievement-badge {
+    @apply relative p-6 bg-gradient-to-br from-navy-light to-navy
+           border border-gold/20 rounded-lg
+           transition-all duration-400 ease-smooth;
+  }
+
+  .achievement-badge:hover {
+    @apply border-gold/50 -translate-y-1;
+    box-shadow: 0 20px 40px -10px rgba(244, 162, 97, 0.2);
+  }
+
+  .achievement-badge::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold to-accent-red rounded-l-lg;
   }
 }
 
-/* Utility layer for one-off utilities */
+/* ============================================
+   Utility layer for one-off utilities
+   ============================================ */
 @layer utilities {
+  /* ----- Text Effects ----- */
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-warm-white to-gold;
   }
 
+  .text-gradient-red {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-red to-gold;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-outline-thick {
+    -webkit-text-stroke: 2px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ----- Reveal Animations ----- */
   .reveal {
-    @apply opacity-0 translate-y-10 transition-all duration-700 ease-smooth;
+    @apply opacity-0 translate-y-12 transition-all duration-800 ease-smooth;
   }
 
   .reveal.active {
     @apply opacity-100 translate-y-0;
   }
+
+  .reveal-left {
+    @apply opacity-0 -translate-x-12 transition-all duration-800 ease-smooth;
+  }
+
+  .reveal-left.active {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .reveal-right {
+    @apply opacity-0 translate-x-12 transition-all duration-800 ease-smooth;
+  }
+
+  .reveal-right.active {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .reveal-scale {
+    @apply opacity-0 scale-90 transition-all duration-800 ease-smooth;
+  }
+
+  .reveal-scale.active {
+    @apply opacity-100 scale-100;
+  }
+
+  /* ----- Noise Overlay ----- */
+  .noise-overlay {
+    @apply pointer-events-none;
+  }
+
+  .noise-overlay::after {
+    content: '';
+    @apply absolute inset-0 opacity-[0.03] pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* ----- Glow Effects ----- */
+  .glow-red {
+    box-shadow: 0 0 60px rgba(230, 57, 70, 0.4);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 60px rgba(244, 162, 97, 0.4);
+  }
+
+  /* ----- Decorative Lines ----- */
+  .line-accent {
+    @apply relative;
+  }
+
+  .line-accent::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-24 h-1 bg-gradient-cta;
+  }
+
+  /* ----- Scroll Progress Bar ----- */
+  .scroll-progress {
+    @apply fixed top-0 left-0 h-1 bg-gradient-cta z-[100];
+    width: var(--scroll-progress, 0%);
+    transition: width 0.1s linear;
+  }
+
+  /* ----- Custom Cursor ----- */
+  .cursor-glow {
+    @apply fixed w-6 h-6 rounded-full pointer-events-none z-[9999]
+           bg-accent-red/30 blur-sm
+           transition-transform duration-150 ease-out;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ----- Marquee ----- */
+  .marquee-track {
+    @apply flex gap-16 whitespace-nowrap;
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* ----- Hover Lift ----- */
+  .hover-lift {
+    @apply transition-all duration-400 ease-smooth;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-2;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ----- Image Treatment ----- */
+  .img-editorial {
+    @apply relative overflow-hidden;
+  }
+
+  .img-editorial::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent;
+  }
+
+  /* ----- Diagonal Stripe Pattern ----- */
+  .stripe-pattern {
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.03) 2px,
+      rgba(255,255,255,0.03) 4px
+    );
+  }
+
+  /* ----- Number Display ----- */
+  .number-display {
+    @apply font-display text-[10rem] lg:text-[15rem] leading-none
+           text-warm-white/[0.02] select-none;
+  }
+
+  /* ----- Underline Reveal ----- */
+  .underline-reveal {
+    @apply relative;
+  }
+
+  .underline-reveal::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent-red
+           transition-all duration-600 ease-smooth;
+  }
+
+  .underline-reveal:hover::after,
+  .underline-reveal.active::after {
+    @apply w-full;
+  }
+}
+
+/* ============================================
+   Custom Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-navy-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-dark rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate;
+}
+
+/* ============================================
+   Page-specific Overrides
+   ============================================ */
+
+/* Hero section jersey number watermark */
+.hero-watermark {
+  @apply absolute -right-20 top-1/2 -translate-y-1/2
+         font-display text-[25rem] lg:text-[40rem]
+         text-warm-white/[0.02] select-none pointer-events-none
+         leading-none;
+}
+
+/* Stats counter animation trigger */
+.stat-counter {
+  @apply transition-all duration-1000;
+}
+
+.stat-counter.counted {
+  animation: countPulse 0.5s ease-out;
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Gallery hover zoom */
+.gallery-item {
+  @apply relative overflow-hidden cursor-pointer;
+}
+
+.gallery-item img,
+.gallery-item .placeholder {
+  @apply transition-transform duration-600 ease-smooth;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover .placeholder {
+  @apply scale-110;
+}
+
+/* Contact form focus states */
+.form-input {
+  @apply w-full bg-white/5 border border-white/20 rounded-lg px-5 py-4
+         text-warm-white placeholder-slate font-body text-lg
+         focus:outline-none focus:border-accent-red focus:ring-2 focus:ring-accent-red/20
+         transition-all duration-400 ease-smooth;
+}
+
+.form-input:focus {
+  @apply bg-white/10;
+}
+
+/* Animated underline for section titles */
+.title-underline {
+  @apply relative inline-block;
+}
+
+.title-underline::after {
+  content: '';
+  @apply absolute -bottom-2 left-0 h-1 bg-gradient-cta rounded-full;
+  width: 0;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.title-underline.active::after {
+  width: 100%;
 }
