@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Amaya Vargas — NFC Player Card (Print Sheet)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Cormorant:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* Standalone print sheet — intentionally NOT using the site's Tailwind build
+     so card dimensions stay exact regardless of CSS changes. */
+  :root {
+    --navy: #0a1628;
+    --navy-dark: #050b14;
+    --warm-white: #faf8f5;
+    --red: #e63946;
+    --gold: #f4a261;
+    --slate: #64748b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #e8e4dd;
+    color: var(--navy);
+    padding: 2rem;
+  }
+
+  .instructions {
+    max-width: 7in;
+    margin: 0 auto 2rem;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .instructions h1 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .instructions ol { padding-left: 1.2rem; }
+  .instructions li { margin-bottom: 0.35rem; }
+  .instructions code { background: #f0ede8; padding: 0.1em 0.4em; border-radius: 3px; font-size: 0.85em; }
+
+  .sheet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5in;
+  }
+
+  .card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--slate);
+    margin-bottom: 0.15in;
+    text-align: center;
+  }
+
+  /* ---- CR80 card: 3.375in x 2.125in ---- */
+  .card {
+    width: 3.375in;
+    height: 2.125in;
+    border-radius: 0.125in;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+
+  /* ---------- FRONT ---------- */
+  .card.front {
+    background: linear-gradient(135deg, var(--navy) 0%, #0f2035 60%, var(--navy-dark) 100%);
+    display: flex;
+  }
+
+  .front .photo {
+    width: 38%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .front .info {
+    flex: 1;
+    padding: 0.18in 0.2in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .front .number {
+    position: absolute;
+    top: 0.12in;
+    right: 0.15in;
+    background: var(--red);
+    color: var(--warm-white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.22in;
+    padding: 0.03in 0.07in;
+    line-height: 1;
+  }
+
+  .front .name {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--warm-white);
+    font-size: 0.36in;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+  }
+  .front .name .last { color: var(--gold); }
+
+  .front .role {
+    font-size: 0.105in;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-top: 0.07in;
+  }
+
+  .front .identity {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-size: 0.115in;
+    color: rgba(250, 248, 245, 0.85);
+    margin-top: 0.06in;
+    line-height: 1.35;
+  }
+
+  .front .url {
+    font-size: 0.09in;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 245, 0.6);
+    margin-top: 0.09in;
+  }
+
+  .front .accent-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0.045in;
+    background: linear-gradient(180deg, var(--red), var(--gold));
+  }
+
+  /* ---------- BACK ---------- */
+  .card.back {
+    background: var(--warm-white);
+    display: flex;
+    align-items: center;
+    padding: 0.16in 0.22in;
+    gap: 0.2in;
+  }
+
+  .back .qr {
+    width: 1.45in;
+    height: 1.45in;
+    flex-shrink: 0;
+  }
+
+  .back .meta { flex: 1; }
+
+  .back .tap {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.24in;
+    line-height: 1;
+    color: var(--navy);
+  }
+  .back .tap span { color: var(--red); }
+
+  .back .domain {
+    font-size: 0.115in;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-top: 0.08in;
+  }
+
+  .back .contact {
+    font-size: 0.095in;
+    font-weight: 600;
+    color: var(--slate);
+    margin-top: 0.1in;
+    line-height: 1.5;
+  }
+
+  .back .guardian {
+    font-size: 0.075in;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--slate);
+    margin-top: 0.08in;
+    opacity: 0.8;
+  }
+
+  /* ---------- PRINT ---------- */
+  @page { margin: 0.4in; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .instructions { display: none; }
+    .card { box-shadow: none; outline: 1px dashed #bbb; outline-offset: 2px; }
+    .sheet { gap: 0.35in; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="instructions">
+    <h1>NFC Player Card — Print Sheet</h1>
+    <ol>
+      <li>Print this page at <strong>100% scale</strong> (no "fit to page") — each card is exactly 3.375&Prime; &times; 2.125&Prime; (standard CR80 credit-card size).</li>
+      <li>Or use your browser's <strong>Print &rarr; Save as PDF</strong> to send a vector file to a print shop. Ask for CR80 cards or 16pt cardstock with matte finish.</li>
+      <li>The dashed line is a cut guide; it will not appear on professionally printed cards.</li>
+      <li>After printing, write the URL to NFC cards following <code>docs/nfc-card-guide.md</code>.</li>
+      <li>Verify the QR code scans <em>from a printed copy</em>, not just the screen.</li>
+    </ol>
+  </div>
+
+  <div class="sheet">
+    <div>
+      <p class="card-label">Front</p>
+      <div class="card front">
+        <div class="accent-bar"></div>
+        <img class="photo" src="assets/images/site_images/DSC_0148-2.jpg" alt="Amaya Vargas">
+        <div class="info">
+          <span class="number">#42</span>
+          <h2 class="name">AMAYA<br><span class="last">VARGAS</span></h2>
+          <p class="role">Forward &middot; Chicago Inter &middot; 2012</p>
+          <p class="identity">Left-footed forward &mdash; high work rate, creates and finishes.</p>
+          <p class="url">amayavargas.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="card-label">Back</p>
+      <div class="card back">
+        <img class="qr" src="assets/card/qr-code-navy.png" alt="QR code to amayavargas.com">
+        <div class="meta">
+          <p class="tap">TAP CARD <span>or</span> SCAN CODE</p>
+          <p class="domain">amayavargas.com</p>
+          <p class="contact">contact@amayavargas.com</p>
+          <p class="guardian">Profile managed by parents/guardians</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

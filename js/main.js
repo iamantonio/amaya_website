@@ -342,15 +342,20 @@
     }
 
     /**
-     * Submit form data
+     * Submit form data to Netlify Forms
+     * (AJAX submission keeps the user on the page; Netlify matches
+     * the POST against the form named via the "form-name" field)
      */
     function submitForm(data) {
-        // Placeholder: Replace with actual API call
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                console.log('Form submitted:', data);
-                resolve({ success: true });
-            }, 1000);
+        return fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(data).toString()
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(`Form submission failed: ${response.status}`);
+            }
+            return { success: true };
         });
     }
 

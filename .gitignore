@@ -22,3 +22,10 @@ npm-debug.log*
 # Environment files
 .env
 .env.local
+
+# Claude Code local artifacts
+.claude/
+
+# TLDR analysis cache
+.tldr/
+.tldrignore
