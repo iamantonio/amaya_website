@@ -78,14 +78,26 @@
         <!-- Coach-First Hero Content: the 10-second read -->
         <div class="absolute bottom-0 left-0 right-0 pb-10 lg:pb-16">
             <div class="max-w-content mx-auto px-6 lg:px-12">
+                <!-- Eyebrow: dossier framing -->
+                <p class="opacity-0 animate-fade-up-delay-1 font-heading text-xs font-bold uppercase tracking-[0.25em] text-gold mb-3 flex items-center gap-4 drop-shadow-text">
+                    <span class="w-12 h-px bg-gold"></span>
+                    Scouting Dossier &middot; 2026
+                </p>
+
                 <!-- Name + number -->
                 <h1 class="opacity-0 animate-fade-up-delay-1 font-display text-hero-sub text-warm-white drop-shadow-text leading-none">
                     AMAYA VARGAS <span class="text-accent-red">#42</span>
                 </h1>
 
-                <!-- Position + club -->
-                <p class="opacity-0 animate-fade-up-delay-2 font-heading text-sm lg:text-base font-bold uppercase tracking-[0.25em] text-gold mt-3 drop-shadow-text">
-                    Forward &middot; Chicago Inter &middot; 2012
+                <!-- Hard-facts meta row -->
+                <p class="opacity-0 animate-fade-up-delay-2 font-heading text-xs lg:text-sm font-bold uppercase tracking-[0.2em] text-gold mt-3 drop-shadow-text flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <span>Forward</span>
+                    <span class="text-warm-white/30">|</span>
+                    <span>Chicago Inter</span>
+                    <span class="text-warm-white/30">|</span>
+                    <span>Born 2012</span>
+                    <span class="text-warm-white/30">|</span>
+                    <span>Left-Footed</span>
                 </p>
 
                 <!-- One-line player identity -->
@@ -101,13 +113,22 @@
                         </svg>
                         Watch Highlights
                     </button>
-                    <a href="#contact" class="btn-secondary justify-center">Get In Touch</a>
+                    <a href="#contact" class="btn-secondary justify-center">Contact via Parents</a>
                 </div>
             </div>
         </div>
 
+        <!-- Latest Selection callout (strongest credential in the 10-second window) -->
+        <div class="hidden lg:block absolute right-12 bottom-28 w-72 z-10 opacity-0 animate-fade-up-delay-5">
+            <div class="relative bg-navy/85 backdrop-blur-sm border border-gold/40 rounded-lg p-6">
+                <span class="absolute -top-2.5 left-5 bg-gold text-navy font-heading text-[0.6rem] font-bold uppercase tracking-[0.18em] px-2.5 py-1">Latest Selection</span>
+                <h3 class="font-display text-2xl text-warm-white leading-tight mt-1">USYS NATIONAL ID CAMP</h3>
+                <p class="font-body text-sm text-warm-white/70 mt-2 leading-relaxed">Orlando, FL &middot; February 2026 &mdash; selected for the national identification camp.</p>
+            </div>
+        </div>
+
         <!-- Scroll Indicator -->
-        <div class="hidden lg:flex absolute bottom-6 right-12 flex-col items-center gap-2 opacity-0 animate-fade-up-delay-5">
+        <div class="hidden lg:flex absolute bottom-6 right-12 flex-col items-center gap-2 opacity-0 animate-fade-up-delay-6">
             <span class="font-heading text-[0.65rem] uppercase tracking-[0.3em] text-warm-white/70">Scroll to explore</span>
             <div class="w-px h-10 bg-gradient-to-b from-gold to-transparent"></div>
         </div>
@@ -258,22 +279,71 @@
                     </div>
                 </div>
 
-                <!-- Thumbnail Sidebar -->
-                <div class="flex lg:flex-col gap-4">
-                    <!-- Thumb 1 - Goals Compilation -->
-                    <div class="relative flex-1 aspect-video bg-navy rounded-lg overflow-hidden reveal cursor-pointer group video-trigger" style="transition-delay: 0.1s;" data-video-id="-j6kL1UwJ5Q" data-video-title="Goals Compilation">
-                        <img src="https://img.youtube.com/vi/-j6kL1UwJ5Q/maxresdefault.jpg" alt="Goals Compilation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-navy/30 group-hover:bg-navy/10 transition-colors duration-400"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 bg-accent-red/90 rounded-full flex items-center justify-center transition-all duration-400 group-hover:scale-110">
-                                <svg class="w-5 h-5 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
+                <!-- Video Playlist Sidebar -->
+                <div class="flex flex-col gap-3 lg:justify-center reveal" style="transition-delay: 0.1s;">
+                    <!-- Amaya Scores -->
+                    <div class="group video-trigger cursor-pointer flex items-center gap-4 bg-navy/[0.04] hover:bg-navy/[0.08] rounded-lg p-3 transition-colors duration-400" data-video-id="PJxPUfixSdQ" data-video-title="Amaya Scores">
+                        <div class="relative w-28 shrink-0 aspect-video rounded-md overflow-hidden">
+                            <img src="https://img.youtube.com/vi/PJxPUfixSdQ/mqdefault.jpg" alt="Amaya Scores" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-accent-red/90 rounded-full flex items-center justify-center transition-transform duration-400 group-hover:scale-110">
+                                    <svg class="w-3.5 h-3.5 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-navy/90 to-transparent">
-                            <span class="font-display text-sm uppercase tracking-[0.05em] text-warm-white">Goals Compilation</span>
+                        <span class="font-heading text-sm font-bold uppercase tracking-[0.1em] text-navy">Amaya Scores</span>
+                    </div>
+
+                    <!-- Goals Compilation -->
+                    <div class="group video-trigger cursor-pointer flex items-center gap-4 bg-navy/[0.04] hover:bg-navy/[0.08] rounded-lg p-3 transition-colors duration-400" data-video-id="-j6kL1UwJ5Q" data-video-title="Goals Compilation">
+                        <div class="relative w-28 shrink-0 aspect-video rounded-md overflow-hidden">
+                            <img src="https://img.youtube.com/vi/-j6kL1UwJ5Q/mqdefault.jpg" alt="Goals Compilation" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-accent-red/90 rounded-full flex items-center justify-center transition-transform duration-400 group-hover:scale-110">
+                                    <svg class="w-3.5 h-3.5 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
                         </div>
+                        <span class="font-heading text-sm font-bold uppercase tracking-[0.1em] text-navy">Goals Compilation</span>
+                    </div>
+
+                    <!-- Match Highlight I -->
+                    <div class="group video-trigger cursor-pointer flex items-center gap-4 bg-navy/[0.04] hover:bg-navy/[0.08] rounded-lg p-3 transition-colors duration-400" data-video-id="j5hl7N_0kYc" data-video-title="Match Highlight I">
+                        <div class="relative w-28 shrink-0 aspect-video rounded-md overflow-hidden">
+                            <img src="https://img.youtube.com/vi/j5hl7N_0kYc/mqdefault.jpg" alt="Match Highlight I" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-accent-red/90 rounded-full flex items-center justify-center transition-transform duration-400 group-hover:scale-110">
+                                    <svg class="w-3.5 h-3.5 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="font-heading text-sm font-bold uppercase tracking-[0.1em] text-navy">Match Highlight I</span>
+                    </div>
+
+                    <!-- Match Highlight II -->
+                    <div class="group video-trigger cursor-pointer flex items-center gap-4 bg-navy/[0.04] hover:bg-navy/[0.08] rounded-lg p-3 transition-colors duration-400" data-video-id="W3OVSPgnpJU" data-video-title="Match Highlight II">
+                        <div class="relative w-28 shrink-0 aspect-video rounded-md overflow-hidden">
+                            <img src="https://img.youtube.com/vi/W3OVSPgnpJU/mqdefault.jpg" alt="Match Highlight II" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-accent-red/90 rounded-full flex items-center justify-center transition-transform duration-400 group-hover:scale-110">
+                                    <svg class="w-3.5 h-3.5 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="font-heading text-sm font-bold uppercase tracking-[0.1em] text-navy">Match Highlight II</span>
+                    </div>
+
+                    <!-- Goal vs. Press -->
+                    <div class="group video-trigger cursor-pointer flex items-center gap-4 bg-navy/[0.04] hover:bg-navy/[0.08] rounded-lg p-3 transition-colors duration-400" data-video-id="EbQMJQ3Uj08" data-video-title="Amaya Scores II">
+                        <div class="relative w-28 shrink-0 aspect-video rounded-md overflow-hidden">
+                            <img src="https://img.youtube.com/vi/EbQMJQ3Uj08/mqdefault.jpg" alt="Amaya Scores II" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-accent-red/90 rounded-full flex items-center justify-center transition-transform duration-400 group-hover:scale-110">
+                                    <svg class="w-3.5 h-3.5 text-warm-white ml-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="font-heading text-sm font-bold uppercase tracking-[0.1em] text-navy">Amaya Scores II</span>
                     </div>
                 </div>
             </div>
@@ -318,10 +388,8 @@
 
                 <!-- Achievement 3: ODP Midwest Regional ID Camp -->
                 <div class="achievement-badge reveal" style="transition-delay: 0.15s;">
-                    <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                        </svg>
+                    <div class="w-32 h-32 rounded-lg overflow-hidden mb-4">
+                        <img src="assets/images/odp-camp.jpg" alt="Amaya at the US Youth Soccer ODP camp" class="w-full h-full object-cover">
                     </div>
                     <span class="font-heading text-xs font-bold uppercase tracking-[0.15em] text-accent-red">ODP</span>
                     <h4 class="font-display text-2xl text-warm-white mt-2 mb-3">MIDWEST REGIONAL ID CAMP</h4>
@@ -356,19 +424,71 @@
                 <!-- Large Feature Image -->
                 <div class="col-span-2 row-span-2 gallery-item aspect-square lg:aspect-auto bg-warm-cream rounded-lg reveal">
                     <img
-                        src="assets/images/site_images/DSC_4096.jpg"
-                        alt="Amaya Vargas kicking the ball"
+                        src="assets/images/site_images/amaya-drive.jpg"
+                        alt="Amaya Vargas driving at a defender with the ball"
                         class="w-full h-full object-cover object-center"
                     >
                     <!-- Hover overlay -->
                     <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
                     <span class="absolute bottom-5 left-5 font-display text-lg uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
-                        Match Day
+                        On The Attack
                     </span>
                 </div>
 
                 <!-- Image 2 -->
                 <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.1s;">
+                    <img
+                        src="assets/images/site_images/amaya-1v1.jpg"
+                        alt="Amaya Vargas taking on a defender 1v1"
+                        class="w-full h-full object-cover object-center"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-4 left-4 font-display text-sm uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+                        1v1
+                    </span>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.15s;">
+                    <img
+                        src="assets/images/site_images/amaya-attack.jpg"
+                        alt="Amaya Vargas attacking with the ball against a defender"
+                        class="w-full h-full object-cover object-center"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-4 left-4 font-display text-sm uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+                        Taking Them On
+                    </span>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.2s;">
+                    <img
+                        src="assets/images/site_images/amaya-pointing.jpg"
+                        alt="Amaya Vargas directing play on the pitch"
+                        class="w-full h-full object-cover object-center"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-4 left-4 font-display text-sm uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+                        Directing Play
+                    </span>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.25s;">
+                    <img
+                        src="assets/images/site_images/DSC_4096.jpg"
+                        alt="Amaya Vargas kicking the ball"
+                        class="w-full h-full object-cover object-center"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-10"></div>
+                    <span class="absolute bottom-4 left-4 font-display text-sm uppercase tracking-[0.1em] text-warm-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+                        Match Day
+                    </span>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.3s;">
                     <img
                         src="assets/images/site_images/DSC_0436-2.jpg"
                         alt="Amaya Vargas chasing the ball"
@@ -380,8 +500,8 @@
                     </span>
                 </div>
 
-                <!-- Image 3 -->
-                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.15s;">
+                <!-- Image 7 -->
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.35s;">
                     <img
                         src="assets/images/site_images/DSC_0441-2.jpg"
                         alt="Amaya Vargas running with the ball"
@@ -393,8 +513,8 @@
                     </span>
                 </div>
 
-                <!-- Image 4 -->
-                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.2s;">
+                <!-- Image 8 -->
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.4s;">
                     <img
                         src="assets/images/site_images/DSC_3535.jpg"
                         alt="Amaya Vargas in navy jersey"
@@ -406,8 +526,8 @@
                     </span>
                 </div>
 
-                <!-- Image 5 -->
-                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.25s;">
+                <!-- Image 9 -->
+                <div class="gallery-item aspect-square bg-warm-cream rounded-lg reveal" style="transition-delay: 0.45s;">
                     <img
                         src="assets/images/site_images/DSC_5130.jpg"
                         alt="Amaya Vargas game action"
