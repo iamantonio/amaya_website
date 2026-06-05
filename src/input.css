@@ -169,13 +169,6 @@
     font-family: Georgia, serif;
   }
 
-  /* ----- Hero Tryout Badge ----- */
-  .hero-badge {
-    @apply inline-flex items-center gap-2 px-4 py-2
-           bg-navy/70 backdrop-blur-sm border border-gold/50 rounded-full
-           font-heading text-[0.65rem] lg:text-xs font-bold uppercase tracking-[0.15em] text-gold;
-  }
-
   /* ----- Achievement Badge ----- */
   .achievement-badge {
     @apply relative p-6 bg-gradient-to-br from-navy-light to-navy
@@ -296,8 +289,10 @@
   }
 
   /* ----- Marquee ----- */
+  /* No gap on the track: each half carries its own trailing padding (pr-8)
+     so item spacing is uniform across the seam and the -50% loop is seamless */
   .marquee-track {
-    @apply flex gap-16 whitespace-nowrap;
+    @apply flex whitespace-nowrap;
     animation: marquee 30s linear infinite;
   }
 

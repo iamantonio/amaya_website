@@ -47,7 +47,8 @@ Tailwind only scans `./*.html` and `./js/**/*.js` (`content` in tailwind.config.
 
 ## Deployment & Pending Work
 
-- Hosting: Netlify (`netlify.toml` — publish root, no build step) with custom domain amayavargas.com; see `docs/plans/2025-11-28-production-deployment.md`
-- Contact form is wired to Netlify Forms (`data-netlify`, hidden `form-name`, honeypot); `submitForm()` in `js/main.js` does an AJAX POST to `/`. It only works on the deployed site, not locally.
+- Hosting: self-hosted VPS at 5.161.123.224 (Hetzner, Ubuntu) — Caddy serves `/var/www/amayavargas.com` with automatic HTTPS for amayavargas.com; Caddyfile at `/etc/caddy/Caddyfile` (headers, caching, www→apex redirect live there)
+- Deploys: push to `main` → `.github/workflows/deploy.yml` rsyncs the site to the VPS as user `deploy` (key in repo secret `VPS_DEPLOY_KEY`; local copy `~/.ssh/amaya_deploy_ed25519`). Dev-only files (src/, docs/, node_modules, configs) are excluded from the sync.
+- Contact form posts to Formspree via AJAX (`submitForm()` in `js/main.js` posts to the form's `action` URL). It only works with a real Formspree endpoint, not locally.
 - Privacy rules (she is a minor): no home address, no school name, no phone number, no athlete DMs/socials, contact routes through parents; keep the "managed by parents/guardians" footer line. Testimonials were removed until real coach quotes exist (restore from git history).
 - `docs/plans/` holds the original design and implementation plans for historical context.

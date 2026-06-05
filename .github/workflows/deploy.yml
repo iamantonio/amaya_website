@@ -1,0 +1,32 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_DEPLOY_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H 5.161.123.224 >> ~/.ssh/known_hosts
+
+      - name: Rsync site to VPS
+        run: |
+          rsync -avz --delete \
+            --exclude '.git*' --exclude 'node_modules' --exclude 'src' --exclude 'docs' \
+            --exclude '.claude' --exclude '.tldr*' --exclude 'package*.json' \
+            --exclude 'tailwind.config.js' --exclude '*.md' \
+            -e "ssh -i ~/.ssh/deploy_key" \
+            ./ deploy@5.161.123.224:/var/www/amayavargas.com/

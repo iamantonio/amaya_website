@@ -77,33 +77,23 @@
         <!-- Coach-First Hero Content: the 10-second read -->
         <div class="absolute bottom-0 left-0 right-0 pb-10 lg:pb-16">
             <div class="max-w-content mx-auto px-6 lg:px-12">
-                <!-- Tryout context badge -->
-                <div class="opacity-0 animate-fade-up-delay-1 mb-4">
-                    <span class="hero-badge">
-                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/>
-                        </svg>
-                        Puerto Rico National Team &middot; U15 Tryout &mdash; June 2026
-                    </span>
-                </div>
-
                 <!-- Name + number -->
-                <h1 class="opacity-0 animate-fade-up-delay-2 font-display text-hero-sub text-warm-white drop-shadow-text leading-none">
+                <h1 class="opacity-0 animate-fade-up-delay-1 font-display text-hero-sub text-warm-white drop-shadow-text leading-none">
                     AMAYA VARGAS <span class="text-accent-red">#42</span>
                 </h1>
 
                 <!-- Position + club -->
-                <p class="opacity-0 animate-fade-up-delay-3 font-heading text-sm lg:text-base font-bold uppercase tracking-[0.25em] text-gold mt-3 drop-shadow-text">
+                <p class="opacity-0 animate-fade-up-delay-2 font-heading text-sm lg:text-base font-bold uppercase tracking-[0.25em] text-gold mt-3 drop-shadow-text">
                     Forward &middot; Chicago Inter &middot; 2012
                 </p>
 
                 <!-- One-line player identity -->
-                <p class="opacity-0 animate-fade-up-delay-4 font-body text-lg lg:text-2xl italic text-warm-white/90 mt-2 max-w-xl drop-shadow-text">
+                <p class="opacity-0 animate-fade-up-delay-3 font-body text-lg lg:text-2xl italic text-warm-white/90 mt-2 max-w-xl drop-shadow-text">
                     Left-footed forward &mdash; high work rate, creates and finishes.
                 </p>
 
                 <!-- Primary CTAs -->
-                <div class="opacity-0 animate-fade-up-delay-5 flex flex-col sm:flex-row gap-4 mt-7">
+                <div class="opacity-0 animate-fade-up-delay-4 flex flex-col sm:flex-row gap-4 mt-7">
                     <button type="button" class="btn-primary justify-center video-trigger" data-video-id="cB2H_emdQ-c" data-video-title="Amaya Highlight Reel">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7z"/>
@@ -116,7 +106,7 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="hidden lg:flex absolute bottom-6 right-12 flex-col items-center gap-2 opacity-0 animate-fade-up-delay-6">
+        <div class="hidden lg:flex absolute bottom-6 right-12 flex-col items-center gap-2 opacity-0 animate-fade-up-delay-5">
             <span class="font-heading text-[0.65rem] uppercase tracking-[0.3em] text-warm-white/70">Scroll to explore</span>
             <div class="w-px h-10 bg-gradient-to-b from-gold to-transparent"></div>
         </div>
@@ -125,7 +115,7 @@
     <!-- Marquee Banner -->
     <div class="bg-accent-red py-4 overflow-hidden">
         <div class="marquee-track">
-            <span class="font-display text-2xl text-warm-white/90 flex items-center gap-8">
+            <span class="font-display text-2xl text-warm-white/90 flex items-center gap-8 pr-8">
                 <span>FORWARD</span>
                 <span class="text-warm-white/40">&bull;</span>
                 <span>STRIKER</span>
@@ -137,7 +127,7 @@
                 <span>#42</span>
                 <span class="text-warm-white/40">&bull;</span>
             </span>
-            <span class="font-display text-2xl text-warm-white/90 flex items-center gap-8">
+            <span class="font-display text-2xl text-warm-white/90 flex items-center gap-8 pr-8">
                 <span>FORWARD</span>
                 <span class="text-warm-white/40">&bull;</span>
                 <span>STRIKER</span>
@@ -522,12 +512,10 @@
                     </div>
                 </div>
 
-                <!-- Form Side (Netlify Forms) -->
-                <form class="contact-form glass-card rounded-xl p-8 lg:p-10 reveal-right" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
-                    </p>
+                <!-- Form Side (Formspree) -->
+                <form class="contact-form glass-card rounded-xl p-8 lg:p-10 reveal-right" name="contact" method="POST" action="https://formspree.io/f/xrevbyla">
+                    <!-- Honeypot: hidden field that only bots fill in -->
+                    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
                     <div class="space-y-6">
                         <div>
                             <label for="name" class="block font-heading text-xs font-semibold uppercase tracking-[0.15em] text-slate mb-3">Your Name</label>

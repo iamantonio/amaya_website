@@ -342,14 +342,17 @@
     }
 
     /**
-     * Submit form data to Netlify Forms
-     * (AJAX submission keeps the user on the page; Netlify matches
-     * the POST against the form named via the "form-name" field)
+     * Submit form data to Formspree
+     * (AJAX submission keeps the user on the page; the endpoint
+     * comes from the form's action attribute)
      */
     function submitForm(data) {
-        return fetch('/', {
+        return fetch(elements.contactForm.action, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json'
+            },
             body: new URLSearchParams(data).toString()
         }).then((response) => {
             if (!response.ok) {

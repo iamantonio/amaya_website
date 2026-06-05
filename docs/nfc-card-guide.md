@@ -44,6 +44,6 @@ Repeat for 3–5 cards per the validation plan.
 - Did coaches/staff actually tap or scan it?
 - Did they understand it instantly?
 - Did they comment on professionalism or usefulness?
-- Did they revisit the page later? (Netlify Analytics or form submissions are the signal for v1)
+- Did they revisit the page later? (server access logs at `/var/log/caddy/amayavargas.access.log` on the VPS, or form submissions, are the signal for v1)
 - Did other parents ask about it? → ask 3–5 if they'd want one for their kid
 - Ask 1–2 coaches what info was useful vs. unnecessary
