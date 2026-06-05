@@ -429,7 +429,12 @@
             }
         });
 
+        let lastFocusedTrigger = null;
+
         function openVideoModal(videoId, title) {
+            // Remember what opened the modal so focus can be restored on close
+            lastFocusedTrigger = document.activeElement;
+
             // Set iframe src with autoplay
             modalIframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1`;
             modalIframe.title = title;
@@ -437,6 +442,9 @@
             // Show modal
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+
+            // Move focus into the dialog
+            closeBtn?.focus();
 
             // Trigger animation
             requestAnimationFrame(() => {
@@ -459,6 +467,11 @@
                 modal.classList.add('hidden');
                 modalIframe.src = ''; // Stop video
                 document.body.style.overflow = '';
+
+                // Restore focus to the element that opened the modal
+                if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === 'function') {
+                    lastFocusedTrigger.focus();
+                }
             }, 300);
         }
     }

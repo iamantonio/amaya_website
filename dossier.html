@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Amaya Vargas — Player Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Cormorant:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* One-page recruiter dossier — standalone print page (US Letter).
+     Render to PDF: print at 100% or headless Chrome --print-to-pdf. */
+  :root {
+    --navy: #0a1628; --warm-white: #faf8f5; --red: #e63946;
+    --gold: #f4a261; --slate: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: letter; margin: 0; }
+  html, body { width: 8.5in; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--navy);
+    background: var(--warm-white);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { width: 8.5in; height: 11in; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, #0f2035 100%);
+    color: var(--warm-white);
+    padding: 0.45in 0.6in 0.4in;
+    display: flex; align-items: center; gap: 0.4in;
+  }
+  .header .photo {
+    width: 1.5in; height: 1.5in; border-radius: 8px;
+    object-fit: cover; object-position: top;
+    border: 3px solid var(--gold);
+    flex-shrink: 0;
+  }
+  .header .eyebrow {
+    font-size: 9pt; font-weight: 700; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+  }
+  .header h1 { font-family: 'Bebas Neue', sans-serif; font-size: 38pt; line-height: 0.95; letter-spacing: 0.02em; font-weight: 400; }
+  .header h1 .num { color: var(--red); }
+  .header .meta { font-size: 10pt; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
+  .header .meta span.sep { color: rgba(250,248,245,0.35); padding: 0 6px; }
+  .header .identity { font-family: 'Cormorant', serif; font-style: italic; font-size: 13pt; color: rgba(250,248,245,0.9); margin-top: 6px; }
+
+  /* Body */
+  .body { flex: 1; display: grid; grid-template-columns: 1.55fr 1fr; gap: 0.35in; padding: 0.35in 0.6in; }
+  h2 {
+    font-size: 9.5pt; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 8px; padding-bottom: 4px;
+    border-bottom: 2px solid #e8e4dd;
+  }
+  .section { margin-bottom: 0.26in; }
+  ul { list-style: none; }
+  li { font-size: 10.5pt; line-height: 1.45; padding-left: 14px; position: relative; margin-bottom: 5px; }
+  li::before { content: ''; position: absolute; left: 0; top: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+  .selections li strong { font-weight: 800; }
+  .selections li .when { color: var(--slate); font-size: 9.5pt; }
+
+  table.facts { width: 100%; border-collapse: collapse; }
+  table.facts td { font-size: 10.5pt; padding: 5px 0; border-bottom: 1px solid #eee9e0; }
+  table.facts td:first-child { font-weight: 700; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 0.12em; color: var(--slate); width: 42%; }
+
+  .watch { background: var(--navy); color: var(--warm-white); border-radius: 10px; padding: 0.22in; display: flex; gap: 0.22in; align-items: center; }
+  .watch img.qr { width: 1.05in; height: 1.05in; border-radius: 6px; background: white; padding: 4px; }
+  .watch .domain { font-family: 'Bebas Neue', sans-serif; font-size: 16pt; letter-spacing: 0.04em; }
+  .watch .hint { font-size: 8.5pt; color: rgba(250,248,245,0.75); line-height: 1.5; margin-top: 4px; }
+
+  .contact-box { border: 2px solid var(--gold); border-radius: 10px; padding: 0.2in 0.22in; }
+  .contact-box .email { font-weight: 800; font-size: 11.5pt; }
+  .contact-box .note { font-size: 8.5pt; color: var(--slate); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .footer {
+    padding: 0.16in 0.6in; background: #f1ece3;
+    font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate);
+    display: flex; justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <img class="photo" src="assets/images/headshot-usys-2026.jpg" alt="Amaya Vargas headshot">
+    <div>
+      <p class="eyebrow">Scouting Dossier &middot; 2026</p>
+      <h1>AMAYA VARGAS <span class="num">#42</span></h1>
+      <p class="meta">Forward <span class="sep">|</span> Chicago Inter <span class="sep">|</span> Born 2012 <span class="sep">|</span> Left-Footed</p>
+      <p class="identity">Left-footed forward &mdash; high work rate, creates and finishes.</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="section">
+        <h2>Coach's View</h2>
+        <ul>
+          <li>Left-footed forward; creates chances and finishes them</li>
+          <li>High work rate; presses hard and competes off the ball</li>
+          <li>Coachable, focused, and a natural leader among teammates</li>
+          <li>Strong academic standing alongside full training commitment</li>
+        </ul>
+      </div>
+
+      <div class="section selections">
+        <h2>Selections &amp; Camps</h2>
+        <ul>
+          <li><strong>USYS National ID Camp</strong> <span class="when">&mdash; Orlando, FL &middot; February 2026</span></li>
+          <li><strong>ODP Illinois State Team</strong> <span class="when">&mdash; selected</span></li>
+          <li><strong>ODP Midwest Regional ID Camp</strong> <span class="when">&mdash; invited</span></li>
+          <li><strong>USSF ID Camp</strong> <span class="when">&mdash; invited</span></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Watch</h2>
+        <div class="watch">
+          <img class="qr" src="assets/card/qr-code-navy.png" alt="QR code to amayavargas.com">
+          <div>
+            <p class="domain">AMAYAVARGAS.COM</p>
+            <p class="hint">Full profile with highlight reel, goals compilation, match highlights, photo gallery, and contact form. Scan or visit directly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <h2>Player Details</h2>
+        <table class="facts">
+          <tr><td>Position</td><td>Forward</td></tr>
+          <tr><td>Club</td><td>Chicago Inter</td></tr>
+          <tr><td>Birth Year</td><td>2012</td></tr>
+          <tr><td>Dominant Foot</td><td>Left</td></tr>
+          <tr><td>Height</td><td>5'2"</td></tr>
+          <tr><td>Grade</td><td>Middle School</td></tr>
+          <tr><td>GPA</td><td>3.8</td></tr>
+          <tr><td>Location</td><td>Chicago, Illinois</td></tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Contact</h2>
+        <div class="contact-box">
+          <p class="email">contact@amayavargas.com</p>
+          <p class="note">Managed by parents/guardians</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Amaya Vargas &middot; Player Dossier</span>
+    <span>amayavargas.com</span>
+  </div>
+</div>
+</body>
+</html>
