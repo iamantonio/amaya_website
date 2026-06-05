@@ -244,10 +244,8 @@
   }
 
   /* ----- Noise Overlay ----- */
-  .noise-overlay {
-    @apply pointer-events-none;
-  }
-
+  /* Only the ::after texture is click-transparent — never the section itself,
+     or every link/input inside (e.g. the contact form) becomes unusable */
   .noise-overlay::after {
     content: '';
     @apply absolute inset-0 opacity-[0.03] pointer-events-none;
