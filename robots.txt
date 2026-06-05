@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /card-print.html
+Disallow: /dossier.html
+
+Sitemap: https://amayavargas.com/sitemap.xml
