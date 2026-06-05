@@ -38,13 +38,16 @@
     }
     </script>
 
+    <!-- Performance: preload the hero (LCP) image -->
+    <link rel="preload" as="image" href="assets/images/hero-cutout.webp" fetchpriority="high">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Fonts - Premium Sports Editorial -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;600&family=Cormorant:ital,wght@1,400&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
@@ -156,7 +159,7 @@
             <div class="lg:col-span-4 order-1 lg:order-2 relative flex justify-center items-end self-stretch min-h-[28svh] lg:min-h-0">
                 <!-- plinth glow -->
                 <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[78%] h-10 rounded-[50%] bg-black/50 blur-2xl"></div>
-                <img width="409" height="982" src="assets/images/hero-cutout.png" alt="Amaya Vargas, full-body standing pose"
+                <img width="409" height="982" src="assets/images/hero-cutout.webp" alt="Amaya Vargas, full-body standing pose" fetchpriority="high"
                      class="floaty relative z-10 h-full max-h-[34svh] sm:max-h-[60svh] lg:max-h-[86vh] w-auto object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.55)]">
             </div>
 
@@ -223,7 +226,7 @@
                     <span class="bebas text-7xl text-accent-red leading-none">01</span>
                     <p class="label-sm text-[11px] text-navy/50 mt-2">The Dossier</p>
                     <div class="mt-8 hidden lg:block">
-                        <img width="848" height="795" loading="lazy" decoding="async" src="assets/images/headshot-usys-2026.jpg" alt="Amaya Vargas headshot at the USYS National ID Camp"
+                        <img width="848" height="795" loading="lazy" decoding="async" src="assets/images/headshot-usys-2026.webp" alt="Amaya Vargas headshot at the USYS National ID Camp"
                              class="w-full aspect-square object-cover object-top rounded-sm border border-navy/10">
                         <p class="label-sm text-[10px] text-navy/45 mt-2">USYS ID Camp &middot; 2026</p>
                     </div>
@@ -448,7 +451,7 @@
                 <li class="rise relative grid sm:grid-cols-12 items-center gap-4 bg-gold/[0.07] border border-gold/30 rounded-sm px-6 py-7 hover:bg-gold/10 transition-colors">
                     <div class="sm:col-span-2"><span class="bebas text-4xl text-gold leading-none">2026</span></div>
                     <div class="sm:col-span-7 flex items-center gap-5">
-                        <img width="848" height="795" loading="lazy" decoding="async" src="assets/images/headshot-usys-2026.jpg" alt="Amaya at the USYS National ID Camp" class="hidden sm:block w-14 h-14 rounded-sm object-cover object-top border border-gold/30">
+                        <img width="848" height="795" loading="lazy" decoding="async" src="assets/images/headshot-usys-2026.webp" alt="Amaya at the USYS National ID Camp" class="hidden sm:block w-14 h-14 rounded-sm object-cover object-top border border-gold/30">
                         <div>
                             <p class="bebas text-3xl sm:text-4xl text-warm-white leading-none">USYS National ID Camp</p>
                             <p class="text-sm text-warm-white/60 mt-2">Orlando, Florida &mdash; national identification camp invitation.</p>
@@ -462,7 +465,7 @@
                 <li class="rise grid sm:grid-cols-12 items-center gap-4 bg-navy2 border border-warm-white/10 rounded-sm px-6 py-6 hover:border-warm-white/25 transition-colors">
                     <div class="sm:col-span-2"><span class="bebas text-3xl text-warm-white/40 leading-none">ODP</span></div>
                     <div class="sm:col-span-7 flex items-center gap-5">
-                        <img width="1600" height="1600" loading="lazy" decoding="async" src="assets/images/site_images/DSC_2226-Enhanced-NR.jpg" alt="Amaya playing for the ODP Illinois State Team" class="hidden sm:block w-14 h-14 rounded-sm object-cover border border-warm-white/15">
+                        <img width="1600" height="1600" loading="lazy" decoding="async" src="assets/images/site_images/DSC_2226-Enhanced-NR.webp" alt="Amaya playing for the ODP Illinois State Team" class="hidden sm:block w-14 h-14 rounded-sm object-cover border border-warm-white/15">
                         <div>
                             <p class="bebas text-2xl sm:text-3xl text-warm-white leading-none">ODP Illinois State Team</p>
                             <p class="text-sm text-warm-white/55 mt-2">Olympic Development Program &mdash; Illinois state selection.</p>
@@ -481,7 +484,7 @@
                 <li class="rise grid sm:grid-cols-12 items-center gap-4 bg-navy2 border border-warm-white/10 rounded-sm px-6 py-6 hover:border-warm-white/25 transition-colors">
                     <div class="sm:col-span-2"><span class="bebas text-3xl text-warm-white/40 leading-none">ODP</span></div>
                     <div class="sm:col-span-7 flex items-center gap-5">
-                        <img width="768" height="1024" loading="lazy" decoding="async" src="assets/images/odp-camp.jpg" alt="Amaya at the US Youth Soccer ODP camp" class="hidden sm:block w-14 h-14 rounded-sm object-cover border border-warm-white/15">
+                        <img width="768" height="1024" loading="lazy" decoding="async" src="assets/images/odp-camp.webp" alt="Amaya at the US Youth Soccer ODP camp" class="hidden sm:block w-14 h-14 rounded-sm object-cover border border-warm-white/15">
                         <div>
                             <p class="bebas text-2xl sm:text-3xl text-warm-white leading-none">ODP Midwest ID Camp</p>
                             <p class="text-sm text-warm-white/55 mt-2">Olympic Development Program &mdash; regional Midwest camp.</p>
@@ -507,31 +510,31 @@
             <!-- magazine grid -->
             <div class="grid grid-cols-2 md:grid-cols-4 grid-flow-row-dense gap-3 sm:gap-4">
                 <div class="rise relative rounded-sm overflow-hidden md:row-span-2 aspect-[3/4] md:aspect-auto min-h-[200px] group">
-                    <img width="1600" height="1065" loading="lazy" decoding="async" src="assets/images/site_images/amaya-pointing.jpg" alt="Amaya Vargas directing play on the pitch" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1065" loading="lazy" decoding="async" src="assets/images/site_images/amaya-pointing.webp" alt="Amaya Vargas directing play on the pitch" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
                 <div class="rise relative rounded-sm overflow-hidden aspect-[4/3] group">
-                    <img width="1600" height="1067" loading="lazy" decoding="async" src="assets/images/site_images/amaya-1v1.jpg" alt="Amaya Vargas taking on a defender 1v1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1067" loading="lazy" decoding="async" src="assets/images/site_images/amaya-1v1.webp" alt="Amaya Vargas taking on a defender 1v1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
                 <div class="rise relative rounded-sm overflow-hidden aspect-[4/3] group">
-                    <img width="1600" height="1064" loading="lazy" decoding="async" src="assets/images/site_images/amaya-attack.jpg" alt="Amaya Vargas attacking with the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1064" loading="lazy" decoding="async" src="assets/images/site_images/amaya-attack.webp" alt="Amaya Vargas attacking with the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
                 <div class="rise relative rounded-sm overflow-hidden aspect-[4/3] group">
-                    <img width="1600" height="1066" loading="lazy" decoding="async" src="assets/images/site_images/DSC_4096.jpg" alt="Amaya Vargas striking the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1066" loading="lazy" decoding="async" src="assets/images/site_images/DSC_4096.webp" alt="Amaya Vargas striking the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
                 <div class="rise relative rounded-sm overflow-hidden col-span-2 aspect-[16/9] group">
-                    <img width="1600" height="1066" loading="lazy" decoding="async" src="assets/images/site_images/amaya-drive.jpg" alt="Amaya Vargas driving at a defender with the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1066" loading="lazy" decoding="async" src="assets/images/site_images/amaya-drive.webp" alt="Amaya Vargas driving at a defender with the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
                 <div class="rise relative rounded-sm overflow-hidden aspect-[4/3] group">
-                    <img width="1600" height="1067" loading="lazy" decoding="async" src="assets/images/site_images/DSC_0436-2.jpg" alt="Amaya Vargas chasing the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1067" loading="lazy" decoding="async" src="assets/images/site_images/DSC_0436-2.webp" alt="Amaya Vargas chasing the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
                 <div class="rise relative rounded-sm overflow-hidden aspect-[4/3] group">
-                    <img width="1600" height="1067" loading="lazy" decoding="async" src="assets/images/site_images/DSC_0441-2.jpg" alt="Amaya Vargas running with the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1067" loading="lazy" decoding="async" src="assets/images/site_images/DSC_0441-2.webp" alt="Amaya Vargas running with the ball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
                 <div class="rise relative rounded-sm overflow-hidden aspect-[4/3] group">
-                    <img width="1600" height="1066" loading="lazy" decoding="async" src="assets/images/site_images/DSC_3535.jpg" alt="Amaya Vargas in navy jersey" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1066" loading="lazy" decoding="async" src="assets/images/site_images/DSC_3535.webp" alt="Amaya Vargas in navy jersey" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
                 <div class="rise relative rounded-sm overflow-hidden col-span-2 aspect-[16/9] group">
-                    <img width="1600" height="1066" loading="lazy" decoding="async" src="assets/images/site_images/DSC_5130.jpg" alt="Amaya Vargas in game action" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
+                    <img width="1600" height="1066" loading="lazy" decoding="async" src="assets/images/site_images/DSC_5130.webp" alt="Amaya Vargas in game action" class="absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-smooth group-hover:scale-105">
                 </div>
             </div>
         </div>
