@@ -21,7 +21,7 @@ Tailwind only scans `./*.html` and `./js/**/*.js` (`content` in tailwind.config.
 ## Architecture
 
 **Three source files:**
-- `index.html` — single page; sections in order: nav, hero (coach-first overlay: tryout badge, name/#42, identity line, reel + contact CTAs), marquee banner, `#about` (includes Coach's View bullets), `#stats`, `#highlights`, `#achievements`, `#gallery`, `#contact`, footer, video modal
+- `index.html` — single page; sections in order: nav, hero (coach-first overlay: name/#42, identity line, reel + contact CTAs), marquee banner, `#about` (includes Coach's View bullets), `#highlights`, `#achievements`, `#gallery`, `#contact`, footer, video modal
 - `src/input.css` — Tailwind source: reusable component classes in `@layer components`, animation/effect utilities in `@layer utilities`, page-specific overrides at the bottom
 - `js/main.js` — single IIFE; each feature is an `init*()` function registered in `init()` at the bottom. Add new behavior as another `initX()` plus a call in `init()`.
 
@@ -51,4 +51,5 @@ Tailwind only scans `./*.html` and `./js/**/*.js` (`content` in tailwind.config.
 - Deploys: push to `main` → `.github/workflows/deploy.yml` rsyncs the site to the VPS as user `deploy` (key in repo secret `VPS_DEPLOY_KEY`; local copy `~/.ssh/amaya_deploy_ed25519`). Dev-only files (src/, docs/, node_modules, configs) are excluded from the sync.
 - Contact form posts to Formspree via AJAX (`submitForm()` in `js/main.js` posts to the form's `action` URL). It only works with a real Formspree endpoint, not locally.
 - Privacy rules (she is a minor): no home address, no school name, no phone number, no athlete DMs/socials, contact routes through parents; keep the "managed by parents/guardians" footer line. Testimonials were removed until real coach quotes exist (restore from git history).
+- Content policy: no statistics on the site — stats weren't tracked for the 2024-25 season, so any numbers would be unverifiable. The Stats section was removed deliberately (git history has it); don't re-add numbers without real tracked data. The `.stat-counter` JS contract remains in main.js but is currently unused.
 - `docs/plans/` holds the original design and implementation plans for historical context.

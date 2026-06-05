@@ -32,7 +32,6 @@
             </a>
             <ul id="nav-links" class="hidden lg:flex gap-10 list-none">
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#stats" class="nav-link">Stats</a></li>
                 <li><a href="#highlights" class="nav-link">Highlights</a></li>
                 <li><a href="#achievements" class="nav-link">Achievements</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
@@ -50,7 +49,6 @@
     <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 pt-20 bg-navy z-40">
         <div class="flex flex-col items-center justify-center h-full gap-8">
             <a href="#about" class="mobile-nav-link">About</a>
-            <a href="#stats" class="mobile-nav-link">Stats</a>
             <a href="#highlights" class="mobile-nav-link">Highlights</a>
             <a href="#achievements" class="mobile-nav-link">Achievements</a>
             <a href="#gallery" class="mobile-nav-link">Gallery</a>
@@ -185,7 +183,7 @@
                         <ul class="space-y-3 list-none">
                             <li class="flex items-start gap-3 text-slate-dark font-body text-lg leading-snug">
                                 <span class="mt-2 w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
-                                Left-footed forward; creates and finishes &mdash; 3 goals, 6 assists in 15 games (2024&ndash;25)
+                                Left-footed forward; creates chances and finishes them
                             </li>
                             <li class="flex items-start gap-3 text-slate-dark font-body text-lg leading-snug">
                                 <span class="mt-2 w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
@@ -193,7 +191,7 @@
                             </li>
                             <li class="flex items-start gap-3 text-slate-dark font-body text-lg leading-snug">
                                 <span class="mt-2 w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
-                                ODP Illinois State Team selection; USSF and ODP Midwest Regional ID camp invites
+                                USYS National ID Camp (Orlando, Feb 2026); ODP Illinois State Team; USSF and ODP Midwest ID camp invites
                             </li>
                         </ul>
                     </div>
@@ -230,63 +228,8 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section id="stats" class="relative py-24 lg:py-32 bg-navy overflow-hidden noise-overlay">
-        <!-- Background elements -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-red/5 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[80px]"></div>
-
-        <!-- Stripe pattern -->
-        <div class="absolute inset-0 stripe-pattern"></div>
-
-        <div class="relative max-w-content mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16 reveal">
-                <span class="section-eyebrow justify-center">Performance</span>
-                <h2 class="section-title text-warm-white title-underline">SEASON STATISTICS</h2>
-            </div>
-
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-                <!-- Stat Card 1 -->
-                <div class="glass-card p-6 lg:p-8 text-center reveal group rounded-lg">
-                    <div class="stat-value stat-counter mb-2" data-count="3" data-suffix="">0</div>
-                    <div class="stat-label mb-2">Goals Scored</div>
-                    <div class="font-body text-sm italic text-warm-white/40">2024-25 Season</div>
-                    <!-- Animated top border -->
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth origin-left rounded-t-lg"></div>
-                </div>
-
-                <!-- Stat Card 2 -->
-                <div class="glass-card p-6 lg:p-8 text-center reveal group rounded-lg" style="transition-delay: 0.1s;">
-                    <div class="stat-value stat-counter mb-2" data-count="6" data-suffix="">0</div>
-                    <div class="stat-label mb-2">Assists</div>
-                    <div class="font-body text-sm italic text-warm-white/40">2024-25 Season</div>
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth origin-left rounded-t-lg"></div>
-                </div>
-
-                <!-- Stat Card 3 -->
-                <div class="glass-card p-6 lg:p-8 text-center reveal group rounded-lg" style="transition-delay: 0.2s;">
-                    <div class="stat-value stat-counter mb-2" data-count="15" data-suffix="">0</div>
-                    <div class="stat-label mb-2">Games Played</div>
-                    <div class="font-body text-sm italic text-warm-white/40">2024-25 Season</div>
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth origin-left rounded-t-lg"></div>
-                </div>
-
-                <!-- Stat Card 4 -->
-                <div class="glass-card p-6 lg:p-8 text-center reveal group rounded-lg" style="transition-delay: 0.3s;">
-                    <div class="stat-value stat-counter mb-2" data-count="78" data-suffix="%">0%</div>
-                    <div class="stat-label mb-2">Shot Accuracy</div>
-                    <div class="font-body text-sm italic text-warm-white/40">2024-25 Season</div>
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-cta scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-smooth origin-left rounded-t-lg"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Highlights Section -->
-    <section id="highlights" class="relative py-24 lg:py-32 bg-warm-white overflow-hidden">
-        <!-- Angled top -->
-        <div class="absolute top-0 left-0 right-0 h-32 bg-navy" style="clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);"></div>
-
+    <section id="highlights" class="relative py-24 lg:py-32 bg-warm-cream overflow-hidden">
         <div class="relative max-w-content mx-auto px-6 lg:px-12 pt-12">
             <div class="mb-12 reveal">
                 <span class="section-eyebrow text-gold">Watch</span>
@@ -349,8 +292,18 @@
             </div>
 
             <!-- Achievement Grid -->
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Achievement 1 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Achievement 1: USYS National ID Camp -->
+                <div class="achievement-badge reveal" style="transition-delay: 0.05s;">
+                    <div class="w-32 h-32 rounded-lg overflow-hidden mb-4">
+                        <img src="assets/images/headshot-usys-2026.jpg" alt="Amaya Vargas at USYS National ID Camp" class="w-full h-full object-cover object-top">
+                    </div>
+                    <span class="font-heading text-xs font-bold uppercase tracking-[0.15em] text-accent-red">USYS</span>
+                    <h4 class="font-display text-2xl text-warm-white mt-2 mb-3">NATIONAL ID CAMP</h4>
+                    <p class="text-slate text-sm font-body">Selected for the USYS National ID Camp &mdash; Orlando, FL, February 2026.</p>
+                </div>
+
+                <!-- Achievement 2: ODP Illinois State Team -->
                 <div class="achievement-badge reveal" style="transition-delay: 0.1s;">
                     <div class="w-32 h-32 rounded-lg overflow-hidden mb-4">
                         <img src="assets/images/site_images/DSC_2226-Enhanced-NR.jpg" alt="Amaya at ODP Illinois State Team" class="w-full h-full object-cover">
@@ -360,7 +313,7 @@
                     <p class="text-slate text-sm font-body">Selected for the ODP Illinois State Team.</p>
                 </div>
 
-                <!-- Achievement 2 -->
+                <!-- Achievement 3: ODP Midwest Regional ID Camp -->
                 <div class="achievement-badge reveal" style="transition-delay: 0.15s;">
                     <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -372,7 +325,7 @@
                     <p class="text-slate text-sm font-body">Invited to ODP Midwest Regional ID Camp.</p>
                 </div>
 
-                <!-- Achievement 3 -->
+                <!-- Achievement 4: USSF ID Camp -->
                 <div class="achievement-badge reveal" style="transition-delay: 0.2s;">
                     <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
