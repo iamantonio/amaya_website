@@ -15,6 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Cache-bust static assets
+        # CSS/JS are cached 24h by Caddy; pin each deploy's HTML to its own
+        # asset versions so browsers never mix new HTML with stale CSS/JS.
+        run: |
+          V="${GITHUB_SHA::8}"
+          sed -i "s|href=\"css/styles.css\"|href=\"css/styles.css?v=$V\"|" index.html
+          sed -i "s|src=\"js/main.js\"|src=\"js/main.js?v=$V\"|" index.html
+
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
