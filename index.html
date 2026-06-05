@@ -58,16 +58,19 @@
 
     <!-- Hero Section - Full-bleed cinematic background -->
     <section class="relative min-h-[85vh] lg:min-h-screen bg-navy overflow-hidden">
-        <!-- Hero Background Image -->
-        <div class="absolute inset-0 top-16 lg:top-20">
-            <picture>
-                <source media="(min-width: 1024px)" srcset="assets/images/hero-action.png">
-                <img
-                    src="assets/images/hero-action-mobile.png"
-                    alt="Amaya Vargas #42"
-                    class="w-full h-full object-cover object-top lg:object-center"
-                >
-            </picture>
+        <!-- Hero Composition: layered typographic watermark + player cutout
+             (swap assets/images/hero-cutout.png to change the photo) -->
+        <div class="absolute inset-0 top-16 lg:top-20 overflow-hidden">
+            <!-- Name watermark -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none" aria-hidden="true">
+                <span class="font-display leading-[0.8] text-warm-cream/95 text-[min(27vw,34vh)]">AMAYA</span>
+                <span class="font-display leading-[0.8] text-warm-cream/95 text-[min(27vw,34vh)]">VARGAS</span>
+            </div>
+            <!-- Jersey number watermark -->
+            <div class="absolute bottom-0 right-[-0.06em] font-display leading-[0.85] text-gold/75 text-[min(32vw,42vh)] select-none pointer-events-none" aria-hidden="true">#42</div>
+            <!-- Player cutout -->
+            <img src="assets/images/hero-cutout.png" alt="Amaya Vargas #42"
+                 class="absolute bottom-0 left-1/2 -translate-x-1/2 h-[72%] sm:h-[80%] lg:h-[88%] w-auto max-w-none drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]">
             <!-- Gradient overlay - stronger at bottom for coach-first text legibility -->
             <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent"></div>
         </div>
