@@ -10,6 +10,7 @@ module.exports = {
           light: '#0f2035',
           lighter: '#162a47',
         },
+        navy2: '#0f1f37',
         warm: {
           white: '#faf8f5',
           cream: '#f5f0e8',

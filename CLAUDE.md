@@ -21,9 +21,11 @@ Tailwind only scans `./*.html` and `./js/**/*.js` (`content` in tailwind.config.
 ## Architecture
 
 **Three source files:**
-- `index.html` — single page; sections in order: nav, hero (coach-first overlay: name/#42, identity line, reel + contact CTAs), marquee banner, `#about` (includes Coach's View bullets), `#highlights`, `#achievements`, `#gallery`, `#contact`, footer, video modal
-- `src/input.css` — Tailwind source: reusable component classes in `@layer components`, animation/effect utilities in `@layer utilities`, page-specific overrides at the bottom
+- `index.html` — single page in the "Scouting Dossier" editorial design (implemented from a Claude Design handoff, 2026-06-05); numbered sections: hero (`#top`: stroke-outline VARGAS watermark, cutout, credential rail), credential ticker, `#about` (01 Dossier: sticky headshot, quick-facts grid), `#coach` (02 Coach's View: A1–A6 strength cards), `#highlights` (03 The Film: 2 feature cards + 4 compact rows), `#achievements` (04 Selections: ledger rows), `#gallery` (05 In Frame: magazine grid), `#contact` (06 Talk to her parents: Formspree form + dossier PDF), footer, video modal
+- `src/input.css` — Tailwind source: legacy component classes in `@layer components`, the Scouting Dossier system at the bottom (`.bebas`, `.label-sm`, `.stroke-cream`, `.grain`, `.rise` transform-only entrance, `.floaty`, `.ticker-track`, `.cta-shine`, `.link-underline`)
 - `js/main.js` — single IIFE; each feature is an `init*()` function registered in `init()` at the bottom. Add new behavior as another `initX()` plus a call in `init()`.
+
+**Design rule from the handoff:** entrances are TRANSFORM-ONLY (`.rise` — never animate opacity from 0) so the page can never load blank on throttled connections (stadium cellular).
 
 **Standalone extras (not part of the Tailwind build):**
 - `card-print.html` — print sheet for the physical NFC/QR player card (CR80 size, self-contained inline CSS on purpose)

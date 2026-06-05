@@ -200,13 +200,7 @@
         if (!elements.nav) return;
 
         function updateNavStyle() {
-            if (window.scrollY > 100) {
-                elements.nav.classList.add('shadow-lg', 'py-3');
-                elements.nav.classList.remove('py-5');
-            } else {
-                elements.nav.classList.remove('shadow-lg', 'py-3');
-                elements.nav.classList.add('py-5');
-            }
+            elements.nav.classList.toggle('scrolled', window.scrollY > 40);
         }
 
         window.addEventListener('scroll', updateNavStyle, { passive: true });
@@ -308,7 +302,7 @@
      * Validate form data
      */
     function validateForm(data) {
-        const { name, email, subject, message } = data;
+        const { name, email, message } = data;
 
         if (!name || name.trim().length < 2) {
             showNotification('Please enter a valid name.', 'error');
@@ -317,11 +311,6 @@
 
         if (!email || !isValidEmail(email)) {
             showNotification('Please enter a valid email address.', 'error');
-            return false;
-        }
-
-        if (!subject || subject.trim().length < 2) {
-            showNotification('Please enter a subject.', 'error');
             return false;
         }
 
