@@ -13,6 +13,17 @@ Companion to `card-print.html` (the printable card design) and the idea doc's va
 
 Avoid: MIFARE Classic cards (iPhones can't read them without an app) and "RFID" 125kHz cards (phones can't read them at all — the idea doc's note that this is **NFC, not standard RFID** is exactly right).
 
+## Making the cards look like player cards (blank white PVC + stickers)
+
+The Amazon NTAG215 cards (85.5 × 54 mm) arrive blank white. The DIY route that looks professional:
+
+1. Buy **full-sheet adhesive label paper** (e.g., Avery 8165 white full-sheet labels, or printable glossy sticker paper).
+2. Print `assets/card/print-ready/sticker-sheet-letter.png` at **100% scale** (no "fit to page") — each sheet has 3 fronts + 3 backs, sized 84.5 × 53.2 mm (a hair inside the card edge so nothing overhangs or peels).
+3. Cut **just inside the gray guide**; round the corners with scissors or a corner punch (the guide shows the radius).
+4. Stick the front label on the side of the card *without* affecting the chip (either side is fine — the antenna is internal), smooth from center outward.
+5. Optional but recommended: a strip of clear packing tape or self-adhesive laminate over each face makes them rain/pocket-proof.
+6. THEN program and lock (below) — program before or after stickering, but always **verify a tap through the sticker** before locking.
+
 ## Writing the URL to a card
 
 1. Install **NFC Tools** on any phone.
