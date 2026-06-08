@@ -45,9 +45,12 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Fonts - self-hosted via @font-face in the stylesheet (font-display: swap).
-         Deliberately NOT preloaded: the metric-matched fallback fonts (src/input.css) keep
-         CLS low even when the real fonts arrive late, so we let the preloaded LCP hero image
-         win bandwidth on slow links instead of racing ~41KB of high-priority font preloads. -->
+         CLS is handled by metric-matched fallback fonts (src/input.css), so preloading is
+         safe and gets the real fonts up sooner on normal connections. (Tested dropping these
+         to free bandwidth for the hero on slow links: no measurable prod LCP change — with the
+         CSS inlined the browser fetches visible-text fonts immediately regardless.) -->
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bebas-neue-400-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
 
     <!-- Styles are INLINED at deploy time (see .github/workflows/deploy.yml) to remove the
          render-blocking request on slow links. This <link> is used for local dev only. -->
