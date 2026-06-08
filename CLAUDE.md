@@ -18,6 +18,10 @@ npm run start  # Simple static server (npx serve)
 
 Tailwind only scans `./*.html` and `./js/**/*.js` (`content` in tailwind.config.js) — classes used anywhere else get purged from the build.
 
+**Deploy-time CSS inlining:** the deploy (`scripts/inline-css.js`, wired into `.github/workflows/deploy.yml`) inlines `css/styles.css` into `index.html`'s `<head>` as a `<style>` block (rewriting `../assets/` font URLs to root-relative) and drops the external `<link>` — this removes a render-blocking request that left slow-cellular visitors on a blank screen. Source `index.html` keeps the `<link rel="stylesheet">` for local dev; only the deployed HTML is inlined.
+
+**Fonts & CLS:** fonts are self-hosted (`assets/fonts/`, `@font-face` at the top of `src/input.css`) and deliberately NOT preloaded — metric-matched fallback fonts (the `…Fallback` families, values from `scripts/gen-font-fallbacks.mjs` via capsize) keep CLS ~0 when the real fonts swap in, which lets the preloaded hero image win bandwidth on slow links. Gotcha: the `.bebas` and `.label-sm` component classes set `font-family` directly and override the `h1 { @apply font-display }` base rule, so any font-stack change must update those classes too — not just `tailwind.config.js`.
+
 ## Architecture
 
 **Three source files:**
