@@ -35,10 +35,12 @@ module.exports = {
         },
       },
       fontFamily: {
-        // Premium Sports Editorial Typography
-        display: ['Bebas Neue', 'sans-serif'],      // Iconic condensed display
-        heading: ['Plus Jakarta Sans', 'sans-serif'], // Modern geometric sans
-        body: ['Cormorant', 'serif'],               // Elegant editorial serif
+        // Premium Sports Editorial Typography. The '…Fallback' families are metric-matched
+        // system fonts (see src/input.css) placed between the web font and the generic
+        // family so the font swap on slow connections causes no layout shift (CLS).
+        display: ['Bebas Neue', 'Bebas Neue Fallback', 'Arial', 'sans-serif'],      // Iconic condensed display
+        heading: ['Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', 'Arial', 'sans-serif'], // Modern geometric sans
+        body: ['Cormorant', 'Cormorant Fallback', 'Times New Roman', 'serif'],      // Elegant editorial serif
       },
       fontSize: {
         'hero': ['clamp(5rem, 15vw, 12rem)', { lineHeight: '0.85', letterSpacing: '0.02em' }],
