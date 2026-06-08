@@ -15,12 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache-bust static assets
-        # CSS/JS are cached 24h by Caddy; pin each deploy's HTML to its own
-        # asset versions so browsers never mix new HTML with stale CSS/JS.
+      - name: Inline CSS + cache-bust JS
+        # Inline the compiled stylesheet into <head> so first paint isn't blocked by a
+        # render-blocking CSS request on slow links (the big mobile-cold-load win). JS keeps
+        # a per-deploy version so browsers never mix new HTML with stale JS.
         run: |
+          node scripts/inline-css.js
           V="${GITHUB_SHA::8}"
-          sed -i "s|href=\"css/styles.css\"|href=\"css/styles.css?v=$V\"|" index.html
           sed -i "s|src=\"js/main.js\"|src=\"js/main.js?v=$V\"|" index.html
 
       - name: Set up SSH
@@ -35,6 +36,6 @@ jobs:
           rsync -avz --delete \
             --exclude '.git*' --exclude 'node_modules' --exclude 'src' --exclude 'docs' \
             --exclude '.claude' --exclude '.tldr*' --exclude 'package*.json' \
-            --exclude 'tailwind.config.js' --exclude '*.md' \
+            --exclude 'tailwind.config.js' --exclude '*.md' --exclude 'scripts' \
             -e "ssh -i ~/.ssh/deploy_key" \
             ./ deploy@5.161.123.224:/var/www/amayavargas.com/

@@ -44,12 +44,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
-    <!-- Fonts - self-hosted (was Google Fonts CDN); @font-face declared in css/styles.css.
-         Preload the two above-the-fold latin faces; latin-ext + Cormorant load on demand. -->
+    <!-- Fonts - self-hosted via @font-face in the stylesheet (font-display: swap).
+         Preload the two above-the-fold faces so they arrive early and keep CLS low
+         (dropping these regressed CLS 0.03 -> 0.13 — the late swap shifts the headings). -->
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bebas-neue-400-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
 
-    <!-- Styles -->
+    <!-- Styles are INLINED at deploy time (see .github/workflows/deploy.yml) to remove the
+         render-blocking request on slow links. This <link> is used for local dev only. -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-navy text-warm-white font-heading antialiased overflow-x-hidden">
@@ -639,6 +641,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
